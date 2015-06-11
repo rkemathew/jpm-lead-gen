@@ -24,10 +24,10 @@ public class BlogEntryController {
         this.service = service;
     }
 
-    @RequestMapping(value="/{blogEntryId}",
-            method = RequestMethod.GET)
+    @RequestMapping(value="/{blogEntryId}", method = RequestMethod.GET)
     public ResponseEntity<BlogEntryResource> getBlogEntry(
-            @PathVariable Long blogEntryId) {
+            @PathVariable Long blogEntryId
+    ) {
         BlogEntry entry = service.findBlogEntry(blogEntryId);
         if(entry != null)
         {
@@ -38,10 +38,10 @@ public class BlogEntryController {
         }
     }
 
-    @RequestMapping(value="/{blogEntryId}",
-            method = RequestMethod.DELETE)
+    @RequestMapping(value="/{blogEntryId}", method = RequestMethod.DELETE)
     public ResponseEntity<BlogEntryResource> deleteBlogEntry(
-            @PathVariable Long blogEntryId) {
+            @PathVariable Long blogEntryId
+    ) {
         BlogEntry entry = service.deleteBlogEntry(blogEntryId);
         if(entry != null)
         {
@@ -52,10 +52,10 @@ public class BlogEntryController {
         }
     }
 
-    @RequestMapping(value="/{blogEntryId}",
-            method = RequestMethod.PUT)
+    @RequestMapping(value="/{blogEntryId}", method = RequestMethod.PUT)
     public ResponseEntity<BlogEntryResource> updateBlogEntry(
-            @PathVariable Long blogEntryId, @RequestBody BlogEntryResource sentBlogEntry) {
+            @PathVariable Long blogEntryId, @RequestBody BlogEntryResource sentBlogEntry
+    ) {
         BlogEntry updatedEntry = service.updateBlogEntry(blogEntryId, sentBlogEntry.toBlogEntry());
         if(updatedEntry != null)
         {

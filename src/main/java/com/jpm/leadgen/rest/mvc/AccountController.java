@@ -48,16 +48,16 @@ public class AccountController {
 
     @RequestMapping(method = RequestMethod.GET)
     @PreAuthorize("permitAll")
-    public ResponseEntity<AccountListResource> findAllAccounts(@RequestParam(value="name", required = false) String name, @RequestParam(value="password", required = false) String password) {
+    public ResponseEntity<AccountListResource> findAllAccounts(@RequestParam(value = "name", required = false) String name, @RequestParam(value = "password", required = false) String password) {
         AccountList list = null;
-        if(name == null) {
+        if (name == null) {
             list = accountService.findAllAccounts();
         } else {
             Account account = accountService.findByAccountName(name);
             list = new AccountList(new ArrayList<Account>());
-            if(account != null) {
-                if(password != null) {
-                    if(account.getPassword().equals(password)) {
+            if (account != null) {
+                if (password != null) {
+                    if (account.getPassword().equals(password)) {
                         list = new AccountList(Arrays.asList(account));
                     }
                 } else {
@@ -80,20 +80,18 @@ public class AccountController {
             HttpHeaders headers = new HttpHeaders();
             headers.setLocation(URI.create(res.getLink("self").getHref()));
             return new ResponseEntity<AccountResource>(res, headers, HttpStatus.CREATED);
-        } catch(AccountExistsException exception) {
+        } catch (AccountExistsException exception) {
             throw new ConflictException(exception);
         }
     }
 
-    @RequestMapping( value="/{accountId}",
-                method = RequestMethod.GET)
+    @RequestMapping(value = "/{accountId}", method = RequestMethod.GET)
     @PreAuthorize("permitAll")
     public ResponseEntity<AccountResource> getAccount(
             @PathVariable Long accountId
     ) {
         Account account = accountService.findAccount(accountId);
-        if(account != null)
-        {
+        if (account != null) {
             AccountResource res = new AccountResourceAsm().toResource(account);
             return new ResponseEntity<AccountResource>(res, HttpStatus.OK);
         } else {
@@ -101,29 +99,25 @@ public class AccountController {
         }
     }
 
-    @RequestMapping(value="/{accountId}/blogs",
-        method = RequestMethod.POST)
+    @RequestMapping(value = "/{accountId}/blogs", method = RequestMethod.POST)
     @PreAuthorize("permitAll")
     public ResponseEntity<BlogResource> createBlog(
             @PathVariable Long accountId,
-            @RequestBody BlogResource res)
-    {
+            @RequestBody BlogResource res) {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if(principal instanceof UserDetails) {
-            UserDetails details = (UserDetails)principal;
+        if (principal instanceof UserDetails) {
+            UserDetails details = (UserDetails) principal;
             Account loggedIn = accountService.findByAccountName(details.getUsername());
-            if(loggedIn.getId() == accountId) {
+            if (loggedIn.getId() == accountId) {
                 try {
                     Blog createdBlog = accountService.createBlog(accountId, res.toBlog());
                     BlogResource createdBlogRes = new BlogResourceAsm().toResource(createdBlog);
                     HttpHeaders headers = new HttpHeaders();
                     headers.setLocation(URI.create(createdBlogRes.getLink("self").getHref()));
                     return new ResponseEntity<BlogResource>(createdBlogRes, headers, HttpStatus.CREATED);
-                } catch(AccountDoesNotExistException exception)
-                {
+                } catch (AccountDoesNotExistException exception) {
                     throw new NotFoundException(exception);
-                } catch(BlogExistsException exception)
-                {
+                } catch (BlogExistsException exception) {
                     throw new ConflictException(exception);
                 }
             } else {
@@ -134,8 +128,7 @@ public class AccountController {
         }
     }
 
-    @RequestMapping(value="/{accountId}/blogs",
-            method = RequestMethod.GET)
+    @RequestMapping(value = "/{accountId}/blogs", method = RequestMethod.GET)
     @PreAuthorize("permitAll")
     public ResponseEntity<BlogListResource> findAllBlogs(
             @PathVariable Long accountId) {
@@ -143,12 +136,9 @@ public class AccountController {
             BlogList blogList = accountService.findBlogsByAccount(accountId);
             BlogListResource blogListRes = new BlogListResourceAsm().toResource(blogList);
             return new ResponseEntity<BlogListResource>(blogListRes, HttpStatus.OK);
-        } catch(AccountDoesNotExistException exception)
-        {
+        } catch (AccountDoesNotExistException exception) {
             throw new NotFoundException(exception);
         }
     }
-
-
-
 }
+
