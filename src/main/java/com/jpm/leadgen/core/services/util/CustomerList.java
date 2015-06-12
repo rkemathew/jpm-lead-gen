@@ -1,22 +1,16 @@
 package com.jpm.leadgen.core.services.util;
 
-import com.jpm.leadgen.core.models.entities.BlogEntry;
 import com.jpm.leadgen.core.models.entities.Customer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Chris on 6/28/14.
+ * Created by Ronnie on 6/11/15.
  */
 public class CustomerList {
     private List<Customer> customers = new ArrayList<Customer>();
     private Long customerId;
-
-    public CustomerList(Long customerId, List<Customer> customers) {
-        this.customerId = customerId;
-        this.customers = customers;
-    }
 
     public CustomerList(ArrayList<Customer> customers) {
     }

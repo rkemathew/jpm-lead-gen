@@ -1,11 +1,7 @@
 package com.jpm.leadgen.rest.resources.asm;
 
-import com.jpm.leadgen.core.services.util.BlogEntryList;
 import com.jpm.leadgen.core.services.util.CustomerList;
-import com.jpm.leadgen.rest.mvc.BlogController;
 import com.jpm.leadgen.rest.mvc.CustomerController;
-import com.jpm.leadgen.rest.resources.BlogEntryListResource;
-import com.jpm.leadgen.rest.resources.BlogEntryResource;
 import com.jpm.leadgen.rest.resources.CustomerListResource;
 import com.jpm.leadgen.rest.resources.CustomerResource;
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
@@ -25,10 +21,10 @@ public class CustomerListResourceAsm extends ResourceAssemblerSupport<CustomerLi
 
     @Override
     public CustomerListResource toResource(CustomerList list) {
-        List<CustomerResource> resources = new CustomerResourceAsm().toResources(list.getEntries());
+        List<CustomerResource> resources = new CustomerResourceAsm().toResources(list.getCustomers());
         CustomerListResource listResource = new CustomerListResource();
         listResource.setCustomers(resources);
-//        listResource.add(linkTo(methodOn(CustomerController.class).findAllCustomers(list.getCustomerId())).withSelfRel());
+        listResource.add(linkTo(methodOn(CustomerController.class).findAllCustomers()).withSelfRel());
         return listResource;
     }
 }

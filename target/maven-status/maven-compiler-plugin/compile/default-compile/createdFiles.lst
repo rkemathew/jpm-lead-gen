@@ -57,3 +57,4 @@ com\jpm\leadgen\core\security\SecurityConfig.class
 com\jpm\leadgen\core\security\SecurityWebAppInitializer.class
 com\jpm\leadgen\rest\resources\BlogListResource.class
 com\jpm\leadgen\rest\resources\CustomerResource.class
+com\jpm\leadgen\core\repositories\jpa\JpaCustomerRepo.class
