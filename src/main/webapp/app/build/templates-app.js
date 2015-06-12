@@ -1,4 +1,4 @@
-angular.module('templates-app', ['about/about.tpl.html', 'account/login.tpl.html', 'account/register.tpl.html', 'account/search.tpl.html', 'blog/manage-blogs.tpl.html', 'home/home.tpl.html']);
+angular.module('templates-app', ['about/about.tpl.html', 'account/login.tpl.html', 'account/register.tpl.html', 'account/search.tpl.html', 'blog/manage-blogs.tpl.html', 'customer/manage-customer.tpl.html', 'home/home.tpl.html']);
 
 angular.module("about/about.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("about/about.tpl.html",
@@ -364,6 +364,61 @@ angular.module("blog/manage-blogs.tpl.html", []).run(["$templateCache", function
     "    </table>\n" +
     "</div>\n" +
     "</div>");
+}]);
+
+angular.module("customer/manage-customer.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("customer/manage-customer.tpl.html",
+    "<div class=\"row\">\n" +
+    "    <h1 class=\"page-header\">\n" +
+    "        Customer Management\n" +
+    "    </h1>\n" +
+    "    <form ng-submit=\"createCustomer()\">\n" +
+    "        <div class=\"form-group\">\n" +
+    "            <label>Contact Name:</label>\n" +
+    "            <input type=\"text\" ng-model=\"customer.contactName\" class=\"form-control\" />\n" +
+    "        </div>\n" +
+    "        <div class=\"form-group\">\n" +
+    "            <label>Customer Name:</label>\n" +
+    "            <input type=\"text\" ng-model=\"customer.companyName\" class=\"form-control\" />\n" +
+    "        </div>\n" +
+    "        <div class=\"form-group\">\n" +
+    "            <label>Address 1:</label>\n" +
+    "            <input type=\"text\" ng-model=\"customer.addressStreet1\" class=\"form-control\" />\n" +
+    "        </div>\n" +
+    "        <div class=\"form-group\">\n" +
+    "            <label>Address 2:</label>\n" +
+    "            <input type=\"text\" ng-model=\"customer.addressStreet2\" class=\"form-control\" />\n" +
+    "        </div>\n" +
+    "        <div class=\"form-group\">\n" +
+    "            <label>City:</label>\n" +
+    "            <input type=\"text\" ng-model=\"customer.city\" class=\"form-control\" />\n" +
+    "        </div>\n" +
+    "        <div class=\"form-group\">\n" +
+    "            <label>State:</label>\n" +
+    "            <input type=\"text\" ng-model=\"customer.state\" class=\"form-control\" />\n" +
+    "        </div>\n" +
+    "        <div class=\"form-group\">\n" +
+    "            <label>Zip:</label>\n" +
+    "            <input type=\"text\" ng-model=\"customer.zip\" class=\"form-control\" />\n" +
+    "        </div>\n" +
+    "        <div class=\"form-group\">\n" +
+    "            <label>Phone 1:</label>\n" +
+    "            <input type=\"text\" ng-model=\"customer.phone1\" class=\"form-control\" />\n" +
+    "        </div>\n" +
+    "        <div class=\"form-group\">\n" +
+    "            <label>Phone 2:</label>\n" +
+    "            <input type=\"text\" ng-model=\"customer.phone2\" class=\"form-control\" />\n" +
+    "        </div>\n" +
+    "        <div class=\"form-group\">\n" +
+    "            <label>Email:</label>\n" +
+    "            <input type=\"text\" ng-model=\"customer.email\" class=\"form-control\" />\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <button class=\"btn btn-success\" type=\"submit\">Create Customer</button>\n" +
+    "    </form>\n" +
+    "</div>\n" +
+    "\n" +
+    "");
 }]);
 
 angular.module("home/home.tpl.html", []).run(["$templateCache", function($templateCache) {

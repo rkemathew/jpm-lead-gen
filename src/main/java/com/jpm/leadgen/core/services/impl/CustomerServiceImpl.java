@@ -3,12 +3,11 @@ package com.jpm.leadgen.core.services.impl;
 import com.jpm.leadgen.core.models.entities.Customer;
 import com.jpm.leadgen.core.repositories.CustomerRepo;
 import com.jpm.leadgen.core.services.CustomerService;
+import com.jpm.leadgen.core.services.exceptions.CustomerExistsException;
 import com.jpm.leadgen.core.services.util.CustomerList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.ArrayList;
 
 /**
  * Created by Ronnie on 6/11/15.
@@ -21,7 +20,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerList findAllCustomers() {
-        return new CustomerList((ArrayList<Customer>)customerRepo.findAllCustomers());
+        return new CustomerList(customerRepo.findAllCustomers());
     }
 
     @Override
@@ -30,13 +29,19 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer createCustomer(Customer data) {
-        return customerRepo.createCustomer(data);
+    public Customer createCustomer(Customer customer) {
+        Customer customerSameCompanyName = customerRepo.findCustomerByCompanyName(customer.getCompanyName());
+
+        if(customerSameCompanyName != null) {
+            throw new CustomerExistsException();
+        }
+
+        return customerRepo.createCustomer(customer);
     }
 
     @Override
-    public Customer updateCustomer(Long id, Customer data) {
-        return customerRepo.updateCustomer(id, data);
+    public Customer updateCustomer(Long id, Customer customer) {
+        return customerRepo.updateCustomer(id, customer);
     }
 
     @Override

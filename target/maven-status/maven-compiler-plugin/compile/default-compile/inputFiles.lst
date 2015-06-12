@@ -46,6 +46,7 @@ C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\rest\reso
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\rest\resources\AccountResource.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\security\SecurityWebAppInitializer.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\services\exceptions\BlogNotFoundException.java
+C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\services\exceptions\CustomerExistsException.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\rest\mvc\BlogController.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\security\EntryPointUnauthorizedHandler.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\services\exceptions\AccountDoesNotExistException.java

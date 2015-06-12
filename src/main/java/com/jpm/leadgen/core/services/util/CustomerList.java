@@ -10,9 +10,9 @@ import java.util.List;
  */
 public class CustomerList {
     private List<Customer> customers = new ArrayList<Customer>();
-    private Long customerId;
 
-    public CustomerList(ArrayList<Customer> customers) {
+    public CustomerList(List customers) {
+        this.customers = customers;
     }
 
     public List<Customer> getCustomers() {
@@ -21,13 +21,5 @@ public class CustomerList {
 
     public void setCustomers(List<Customer> customers) {
         this.customers = customers;
-    }
-
-    public Long getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
     }
 }

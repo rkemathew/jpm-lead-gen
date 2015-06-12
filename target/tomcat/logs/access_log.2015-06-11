@@ -84,3 +84,4 @@
 0:0:0:0:0:0:0:1 - - [11/Jun/2015:22:21:42 -0400] "GET /jpm-lead-gen/app/src/app/home/home.js HTTP/1.1" 200 1519 http-bio-8080-exec-4 8
 0:0:0:0:0:0:0:1 - - [11/Jun/2015:22:21:42 -0400] "GET /jpm-lead-gen/app/assets/jpm-logo.png HTTP/1.1" 200 6735 http-bio-8080-exec-9 2
 0:0:0:0:0:0:0:1 - - [11/Jun/2015:22:21:42 -0400] "GET /jpm-lead-gen/app/vendor/angular/angular.js HTTP/1.1" 200 811420 http-bio-8080-exec-3 77
+0:0:0:0:0:0:0:1 - - [11/Jun/2015:22:39:48 -0400] "GET /jpm-lead-gen/rest/customers HTTP/1.1" 200 111 http-bio-8080-exec-1 1904

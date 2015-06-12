@@ -20,12 +20,24 @@ public class JpaCustomerRepo implements CustomerRepo {
     @Override
     public List<Customer> findAllCustomers() {
         Query query = em.createQuery("SELECT c FROM Customer c");
-        return (List<Customer>) query.getResultList();
+        return query.getResultList();
     }
 
     @Override
     public Customer findCustomer(Long id) {
         return em.find(Customer.class, id);
+    }
+
+    @Override
+    public Customer findCustomerByCompanyName(String companyName) {
+        Query query = em.createQuery("SELECT c FROM Customer c WHERE c.companyName = ?1");
+        query.setParameter(1, companyName);
+        List<Customer> customers = query.getResultList();
+        if(customers.size() == 0) {
+            return null;
+        } else {
+            return customers.get(0);
+        }
     }
 
     @Override

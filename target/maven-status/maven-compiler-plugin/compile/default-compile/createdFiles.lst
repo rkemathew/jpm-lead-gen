@@ -54,6 +54,7 @@ com\jpm\leadgen\core\services\util\AccountList.class
 com\jpm\leadgen\core\repositories\BlogEntryRepo.class
 com\jpm\leadgen\rest\resources\asm\BlogListResourceAsm.class
 com\jpm\leadgen\core\security\SecurityConfig.class
+com\jpm\leadgen\core\services\exceptions\CustomerExistsException.class
 com\jpm\leadgen\core\security\SecurityWebAppInitializer.class
 com\jpm\leadgen\rest\resources\BlogListResource.class
 com\jpm\leadgen\rest\resources\CustomerResource.class

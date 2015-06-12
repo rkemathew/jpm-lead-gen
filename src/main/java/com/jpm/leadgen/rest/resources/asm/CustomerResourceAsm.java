@@ -22,6 +22,14 @@ public class CustomerResourceAsm extends ResourceAssemblerSupport<Customer, Cust
         res.setRid(customer.getId());
         res.setContactName(customer.getContactName());
         res.setCompanyName(customer.getCompanyName());
+        res.setAddressStreet1(customer.getAddressStreet1());
+        res.setAddressStreet2(customer.getAddressStreet2());
+        res.setCity(customer.getCity());
+        res.setState(customer.getState());
+        res.setZip(customer.getZip());
+        res.setPhone1(customer.getPhone1());
+        res.setPhone2(customer.getPhone2());
+        res.setEmail(customer.getEmail());
         Link self = linkTo(CustomerController.class).slash(customer.getId()).withSelfRel();
         res.add(self);
         return res;

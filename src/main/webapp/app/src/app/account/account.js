@@ -106,15 +106,17 @@ angular.module('ngBoilerplate.account', ['ui.router', 'ngResource', 'base64'])
 })
 .controller("RegisterCtrl", function($scope, sessionService, $state, accountService) {
     $scope.register = function() {
-        accountService.register($scope.account,
-        function(returnedData) {
-            sessionService.login($scope.account).then(function() {
-                $state.go("home");
-            });
-        },
-        function() {
-            alert("Error registering user");
-        });
+        accountService.register(
+            $scope.account,
+            function(returnedData) {
+                sessionService.login($scope.account).then(function() {
+                    $state.go("home");
+                });
+            },
+            function() {
+                alert("Error registering user");
+            }
+        );
     };
 })
 .controller("AccountSearchCtrl", function($scope, accounts) {
