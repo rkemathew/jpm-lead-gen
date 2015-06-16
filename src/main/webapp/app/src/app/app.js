@@ -7,6 +7,9 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.blog',
   'ngBoilerplate.customer',
   'ui.router',
+  'ui.utils',
+  'ui.select2',
+  'angular-growl',
   'hateoas'
 ])
 

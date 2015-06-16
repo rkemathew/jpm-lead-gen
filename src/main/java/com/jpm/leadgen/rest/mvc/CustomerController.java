@@ -40,6 +40,21 @@ public class CustomerController {
         return new ResponseEntity<CustomerListResource>(res, HttpStatus.OK);
     }
 
+/*
+    @RequestMapping(method = RequestMethod.GET)
+    @PreAuthorize("permitAll")
+    public ResponseEntity<CustomerListResource> findCustomerByCompanyName(@RequestParam(value = "companyName") String companyName) {
+        CustomerList customerList = null;
+        Customer customer = customerService.findCustomerByCompanyName(companyName);
+        if (customer != null) {
+            customerList = new CustomerList(Arrays.asList(customer));
+        }
+
+        CustomerListResource res = new CustomerListResourceAsm().toResource(customerList);
+        return new ResponseEntity<CustomerListResource>(res, HttpStatus.OK);
+    }
+*/
+
     @RequestMapping(value="/{customerId}", method = RequestMethod.GET)
     @PreAuthorize("permitAll")
     public ResponseEntity<CustomerResource> findCustomer(

@@ -62,18 +62,25 @@ module.exports = {
    */
   vendor_files: {
     js: [
+      'vendor/jquery/dist/jquery.js',
       'vendor/angular/angular.js',
       'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
       'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
       'vendor/angular-ui-router/release/angular-ui-router.js',
-      'vendor/angular-ui-utils/modules/route/route.js',
+      'vendor/angular-ui-utils/ui-utils.js',
       'vendor/angular-resource/angular-resource.min.js',
       'vendor/angular-base64/angular-base64.min.js',
-      'vendor/angular-hateoas/src/angular-hateoas.js'
+      'vendor/angular-hateoas/src/angular-hateoas.js',
+      'vendor/select2/select2.min.js',
+      'vendor/angular-ui-select2/src/select2.js',
+      'vendor/angular-growl-v2/build/angular-growl.js'
     ],
     css: [
+      'vendor/select2/select2.css',
+      'vendor/angular-growl-v2/build/angular-growl.css'
     ],
     assets: [
+      'vendor/select2/select2.png'
     ]
   },
 };
