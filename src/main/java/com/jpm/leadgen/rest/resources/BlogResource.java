@@ -6,8 +6,7 @@ import com.jpm.leadgen.core.models.entities.Blog;
 /**
  * Created by Chris on 6/30/14.
  */
-public class BlogResource extends ResourceSupport {
-
+public class BlogResource extends ModelEntityResource {
     private String title;
 
     private Long rid;
@@ -31,6 +30,7 @@ public class BlogResource extends ResourceSupport {
     public Blog toBlog() {
         Blog blog = new Blog();
         blog.setTitle(title);
+        blog.setErrorMessage(getErrorMessage());
         return blog;
     }
 }

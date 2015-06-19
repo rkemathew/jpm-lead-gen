@@ -6,6 +6,7 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.account',
   'ngBoilerplate.blog',
   'ngBoilerplate.customer',
+  'ngBoilerplate.proposal',
   'ui.router',
   'ui.utils',
   'ui.select2',

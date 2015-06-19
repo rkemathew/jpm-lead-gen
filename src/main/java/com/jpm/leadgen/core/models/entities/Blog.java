@@ -9,7 +9,7 @@ import javax.persistence.OneToOne;
  * Created by Chris on 6/28/14.
  */
 @Entity
-public class Blog {
+public class Blog extends ModelEntity {
     @Id
     @GeneratedValue
     private Long id;

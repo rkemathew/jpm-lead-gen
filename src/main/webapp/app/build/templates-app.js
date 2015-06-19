@@ -1,4 +1,4 @@
-angular.module('templates-app', ['about/about.tpl.html', 'account/login.tpl.html', 'account/register.tpl.html', 'account/search.tpl.html', 'blog/manage-blogs.tpl.html', 'customer/manage-customer.tpl.html', 'home/home.tpl.html']);
+angular.module('templates-app', ['about/about.tpl.html', 'account/login.tpl.html', 'account/register.tpl.html', 'account/search.tpl.html', 'blog/manage-blogs.tpl.html', 'customer/manage-customer.tpl.html', 'home/home.tpl.html', 'proposal/manage-proposal.tpl.html']);
 
 angular.module("about/about.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("about/about.tpl.html",
@@ -372,49 +372,81 @@ angular.module("customer/manage-customer.tpl.html", []).run(["$templateCache", f
     "    <h1 class=\"page-header\">\n" +
     "        Customer Management\n" +
     "    </h1>\n" +
-    "    <form ng-submit=\"createCustomer()\">\n" +
-    "        <div class=\"form-group\">\n" +
-    "            <label>Contact Name:</label>\n" +
-    "            <input type=\"text\" ng-model=\"customer.contactName\" class=\"form-control\" />\n" +
+    "    <form name=\"customerForm\" ng-submit=\"createCustomer()\" class=\"form-horizontal\">\n" +
+    "        <div class=\"form-group form-group-lg\">\n" +
+    "            <label class=\"col-sm-2 control-label\" for=\"contactName\">Contact Name:</label>\n" +
+    "            <div class=\"col-sm-4\">\n" +
+    "                <input id=\"contactName\" type=\"text\" ng-model=\"customer.contactName\" class=\"form-control\" placeholder=\"Enter Company Contact Name\"/>\n" +
+    "            </div>\n" +
     "        </div>\n" +
-    "        <div class=\"form-group\">\n" +
-    "            <label>Customer Name:</label>\n" +
-    "            <input type=\"text\" ng-model=\"customer.companyName\" class=\"form-control\" />\n" +
+    "        <div class=\"form-group form-group-lg\">\n" +
+    "            <label class=\"col-sm-2 control-label\" for=\"companyName\">Company Name:</label>\n" +
+    "            <div class=\"col-sm-4\">\n" +
+    "                <input id=\"companyName\" type=\"text\" ng-model=\"customer.companyName\" class=\"form-control\" placeholder=\"Enter Company Name\"/>\n" +
+    "            </div>\n" +
     "        </div>\n" +
-    "        <div class=\"form-group\">\n" +
-    "            <label>Address 1:</label>\n" +
-    "            <input type=\"text\" ng-model=\"customer.addressStreet1\" class=\"form-control\" />\n" +
+    "        <div class=\"form-group form-group-lg\">\n" +
+    "            <label class=\"col-sm-2 control-label\" for=\"addressStreet1\">Address 1:</label>\n" +
+    "            <div class=\"col-sm-4\">\n" +
+    "                <input id=\"addressStreet1\" type=\"text\" ng-model=\"customer.addressStreet1\" class=\"form-control\" placeholder=\"Enter Street Address\"/>\n" +
+    "            </div>\n" +
     "        </div>\n" +
-    "        <div class=\"form-group\">\n" +
-    "            <label>Address 2:</label>\n" +
-    "            <input type=\"text\" ng-model=\"customer.addressStreet2\" class=\"form-control\" />\n" +
+    "        <div class=\"form-group form-group-lg\">\n" +
+    "            <label class=\"col-sm-2 control-label\" for=\"addressStreet2\">Address 2:</label>\n" +
+    "            <div class=\"col-sm-4\">\n" +
+    "                <input id=\"addressStreet2\" type=\"text\" ng-model=\"customer.addressStreet2\" class=\"form-control\" placeholder=\"Optional Additional Street Address\"/>\n" +
+    "            </div>\n" +
     "        </div>\n" +
-    "        <div class=\"form-group\">\n" +
-    "            <label>City:</label>\n" +
-    "            <input type=\"text\" ng-model=\"customer.city\" class=\"form-control\" />\n" +
+    "        <div class=\"form-group form-group-lg\">\n" +
+    "            <label class=\"col-sm-2 control-label\" for=\"city\">City:</label>\n" +
+    "            <div class=\"col-sm-4\">\n" +
+    "                <input id=\"city\" type=\"text\" ng-model=\"customer.city\" class=\"form-control\" placeholder=\"Enter City\"/>\n" +
+    "            </div>\n" +
     "        </div>\n" +
-    "        <div class=\"form-group\">\n" +
-    "            <label>State:</label>\n" +
-    "            <input type=\"text\" ng-model=\"customer.state\" class=\"form-control\" />\n" +
+    "        <div class=\"form-group form-group-lg\">\n" +
+    "            <label class=\"col-sm-2 control-label\" for=\"state\">State:</label>\n" +
+    "            <div class=\"col-sm-4\">\n" +
+    "                <select ui-select2 id=\"state\" ng-model=\"customer.state\" data-placeholder=\"Choose State\" style=\"width: 100%\">\n" +
+    "                    <option value=\"\"></option>\n" +
+    "                    <option ng-repeat=\"state in states\" value=\"{{state.value}}\">{{state.display}}</option>\n" +
+    "                </select>\n" +
+    "            </div>\n" +
     "        </div>\n" +
-    "        <div class=\"form-group\">\n" +
-    "            <label>Zip:</label>\n" +
-    "            <input type=\"text\" ng-model=\"customer.zip\" class=\"form-control\" />\n" +
+    "        <div class=\"form-group form-group-lg\">\n" +
+    "            <label class=\"col-sm-2 control-label\" for=\"zip\">Zip:</label>\n" +
+    "            <div class=\"col-sm-4\">\n" +
+    "                <input id=\"zip\" type=\"text\" ng-model=\"customer.zip\" ui-mask=\"99999\" class=\"form-control\"/>\n" +
+    "            </div>\n" +
     "        </div>\n" +
-    "        <div class=\"form-group\">\n" +
-    "            <label>Phone 1:</label>\n" +
-    "            <input type=\"text\" ng-model=\"customer.phone1\" class=\"form-control\" />\n" +
+    "        <div class=\"form-group form-group-lg\">\n" +
+    "            <label class=\"col-sm-2 control-label\" for=\"phone1\">Phone 1:</label>\n" +
+    "            <div class=\"col-sm-4\">\n" +
+    "                <input id=\"phone1\" type=\"text\" ng-model=\"customer.phone1\" ui-mask=\"(999) 999-9999\" class=\"form-control\"/>\n" +
+    "            </div>\n" +
     "        </div>\n" +
-    "        <div class=\"form-group\">\n" +
-    "            <label>Phone 2:</label>\n" +
-    "            <input type=\"text\" ng-model=\"customer.phone2\" class=\"form-control\" />\n" +
+    "        <div class=\"form-group form-group-lg\">\n" +
+    "            <label class=\"col-sm-2 control-label\" for=\"phone2\">Phone 2:</label>\n" +
+    "            <div class=\"col-sm-4\">\n" +
+    "                <input id=\"phone2\" type=\"text\" ng-model=\"customer.phone2\" ui-mask=\"(999) 999-9999\" class=\"form-control\"/>\n" +
+    "            </div>\n" +
     "        </div>\n" +
-    "        <div class=\"form-group\">\n" +
-    "            <label>Email:</label>\n" +
-    "            <input type=\"text\" ng-model=\"customer.email\" class=\"form-control\" />\n" +
+    "        <div class=\"form-group form-group-lg\" ng-class=\"{ 'has-error': customerForm.email.$invalid }\">\n" +
+    "            <label class=\"col-sm-2 control-label\" for=\"email\">Email:</label>\n" +
+    "            <div class=\"col-sm-4\">\n" +
+    "                <input id=\"email\" name=\"email\" type=\"email\" ng-model=\"customer.email\" class=\"form-control\"/>\n" +
+    "            </div>\n" +
+    "            <div role=\"alert\">\n" +
+    "                <span class=\"error\" ng-show=\"customerForm.email.$error.email\">\n" +
+    "                    Not a valid email!\n" +
+    "                </span>\n" +
+    "            </div>\n" +
     "        </div>\n" +
     "\n" +
-    "        <button class=\"btn btn-success\" type=\"submit\">Create Customer</button>\n" +
+    "        <div class=\"form-group form-group-lg\">\n" +
+    "            <div class=\"col-sm-6\">\n" +
+    "                <button class=\"btn btn-success pull-right\" type=\"submit\">Create Customer</button>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
     "    </form>\n" +
     "</div>\n" +
     "\n" +
@@ -560,6 +592,91 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "      </p>\n" +
     "    </div>\n" +
     "  </div>\n" +
+    "</div>\n" +
+    "\n" +
+    "");
+}]);
+
+angular.module("proposal/manage-proposal.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("proposal/manage-proposal.tpl.html",
+    "<div class=\"row\">\n" +
+    "    <h1 class=\"page-header\">\n" +
+    "        Proposal Session\n" +
+    "    </h1>\n" +
+    "    <form name=\"proposalForm\" class=\"form-horizontal\">\n" +
+    "        <tabset>\n" +
+    "            <tab>\n" +
+    "                <tab-heading>\n" +
+    "                    <i class=\"fa fa-soccer-ball-o\"></i>\n" +
+    "                    Customer Goal\n" +
+    "                </tab-heading>\n" +
+    "                <br/>\n" +
+    "                <div>\n" +
+    "                    Gather Customer Goals Form\n" +
+    "                </div>\n" +
+    "            </tab>\n" +
+    "            <tab>\n" +
+    "                <tab-heading>\n" +
+    "                    <i class=\"fa fa-pencil-square\"></i>\n" +
+    "                    JPM Model\n" +
+    "                </tab-heading>\n" +
+    "                <br/>\n" +
+    "                <div>\n" +
+    "                    Choose JPM Model Form\n" +
+    "                </div>\n" +
+    "            </tab>\n" +
+    "            <tab>\n" +
+    "                <tab-heading>\n" +
+    "                    <i class=\"fa fa-calculator\"></i>\n" +
+    "                    Assumed Sales Calc\n" +
+    "                </tab-heading>\n" +
+    "                <br/>\n" +
+    "                <div>\n" +
+    "                    Assumed Sales Calculation Form\n" +
+    "                </div>\n" +
+    "            </tab>\n" +
+    "            <tab>\n" +
+    "                <tab-heading>\n" +
+    "                    <i class=\"fa fa-calculator\"></i>\n" +
+    "                    Commission Calc\n" +
+    "                </tab-heading>\n" +
+    "                <br/>\n" +
+    "                <div>\n" +
+    "                    Commission Calculation Form\n" +
+    "                </div>\n" +
+    "            </tab>\n" +
+    "            <tab>\n" +
+    "                <tab-heading>\n" +
+    "                    <i class=\"fa fa-calculator\"></i>\n" +
+    "                    Recruiting Effort Calc\n" +
+    "                </tab-heading>\n" +
+    "                <br/>\n" +
+    "                <div>\n" +
+    "                    Recruiting Effort Calculation Form\n" +
+    "                </div>\n" +
+    "            </tab>\n" +
+    "            <tab>\n" +
+    "                <tab-heading>\n" +
+    "                    <i class=\"fa fa-calculator\"></i>\n" +
+    "                    Advanced:Debt Calc\n" +
+    "                </tab-heading>\n" +
+    "                <br/>\n" +
+    "                <div>\n" +
+    "                    Advanced to Debt Ratio Calculation Form\n" +
+    "                </div>\n" +
+    "            </tab>\n" +
+    "            <tab>\n" +
+    "                <tab-heading>\n" +
+    "                    <i class=\"fa fa-newspaper-o\"></i>\n" +
+    "                    Proposal\n" +
+    "                </tab-heading>\n" +
+    "                <br/>\n" +
+    "                <div>\n" +
+    "                    The Proposal Output form\n" +
+    "                </div>\n" +
+    "            </tab>\n" +
+    "        </tabset>\n" +
+    "    </form>\n" +
     "</div>\n" +
     "\n" +
     "");

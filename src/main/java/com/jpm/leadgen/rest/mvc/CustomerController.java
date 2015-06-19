@@ -12,6 +12,7 @@ import com.jpm.leadgen.rest.resources.asm.CustomerResourceAsm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -23,7 +24,7 @@ import java.net.URI;
  * Created by Ronnie on 6/11/15.
  */
 @Controller
-@RequestMapping("/rest/customers")
+@RequestMapping(produces= MediaType.APPLICATION_JSON_VALUE, value="/rest/customers")
 public class CustomerController {
     private CustomerService customerService;
 
@@ -74,15 +75,22 @@ public class CustomerController {
     public ResponseEntity<CustomerResource> createCustomer(
             @RequestBody CustomerResource sentCustomer
     ) {
+        HttpHeaders headers = new HttpHeaders();
+        HttpStatus httpStatus = null;
+        Customer customer = null;
+        CustomerResource res = null;
         try {
-            Customer createdCustomer = customerService.createCustomer(sentCustomer.toCustomer());
-            CustomerResource res = new CustomerResourceAsm().toResource(createdCustomer);
-            HttpHeaders headers = new HttpHeaders();
-            headers.setLocation(URI.create(res.getLink("self").getHref()));
-            return new ResponseEntity<CustomerResource>(res, headers, HttpStatus.CREATED);
+            customer = customerService.createCustomer(sentCustomer.toCustomer());
+            httpStatus = HttpStatus.CREATED;
         } catch (CustomerExistsException exception) {
-            throw new ConflictException(exception);
+            customer = new Customer();
+            customer.setErrorMessage(exception.getMessage());
+            httpStatus = HttpStatus.CONFLICT;
         }
+
+        res = new CustomerResourceAsm().toResource(customer);
+        headers.setLocation(URI.create(res.getLink("self").getHref()));
+        return new ResponseEntity<CustomerResource>(res, headers, httpStatus);
     }
 
     @RequestMapping(value="/{customerId}", method = RequestMethod.PUT)

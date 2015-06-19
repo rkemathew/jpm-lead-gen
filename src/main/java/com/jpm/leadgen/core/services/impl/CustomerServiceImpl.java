@@ -38,7 +38,7 @@ public class CustomerServiceImpl implements CustomerService {
         Customer customerSameCompanyName = customerRepo.findCustomerByCompanyName(customer.getCompanyName());
 
         if(customerSameCompanyName != null) {
-            throw new CustomerExistsException();
+            throw new CustomerExistsException("Customer with Company Name '" + customer.getCompanyName() + "' already exists");
         }
 
         return customerRepo.createCustomer(customer);

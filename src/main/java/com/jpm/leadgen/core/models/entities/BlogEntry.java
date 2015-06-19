@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
  * Created by Chris on 6/19/14.
  */
 @Entity
-public class BlogEntry {
+public class BlogEntry extends ModelEntity {
 
     @Id
     @GeneratedValue

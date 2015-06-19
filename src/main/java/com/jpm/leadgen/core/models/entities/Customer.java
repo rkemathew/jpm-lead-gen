@@ -8,7 +8,7 @@ import javax.persistence.Id;
  * Created by Super User on 6/11/2015.
  */
 @Entity
-public class Customer {
+public class Customer extends ModelEntity{
     @Id @GeneratedValue
     private Long id;
     private String contactName;

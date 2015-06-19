@@ -6,7 +6,7 @@ import org.springframework.hateoas.ResourceSupport;
 /**
  * Created by Super User on 6/11/2015.
  */
-public class CustomerResource extends ResourceSupport {
+public class CustomerResource extends ModelEntityResource {
     private Long rid;
     private String contactName;
     private String companyName;
@@ -18,6 +18,7 @@ public class CustomerResource extends ResourceSupport {
     private String phone1;
     private String phone2;
     private String email;
+    private String errorMessage;
 
     public Long getRid() {
         return rid;
@@ -107,6 +108,14 @@ public class CustomerResource extends ResourceSupport {
         this.email = email;
     }
 
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
     public Customer toCustomer() {
         Customer customer = new Customer();
         customer.setContactName(contactName);
@@ -119,6 +128,7 @@ public class CustomerResource extends ResourceSupport {
         customer.setPhone1(phone1);
         customer.setPhone2(phone2);
         customer.setEmail(email);
+        customer.setErrorMessage(getErrorMessage());
         return customer;
     }
 }

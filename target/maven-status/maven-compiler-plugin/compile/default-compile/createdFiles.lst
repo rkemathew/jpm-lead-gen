@@ -1,5 +1,6 @@
 com\jpm\leadgen\core\security\UserDetailServiceImpl.class
 com\jpm\leadgen\rest\resources\asm\BlogEntryListResourceAsm.class
+com\jpm\leadgen\core\models\entities\ModelEntity.class
 com\jpm\leadgen\core\services\util\BlogList.class
 com\jpm\leadgen\rest\exceptions\BadRequestException.class
 com\jpm\leadgen\core\security\AuthFailure.class
@@ -20,6 +21,7 @@ com\jpm\leadgen\rest\resources\asm\AccountResourceAsm.class
 com\jpm\leadgen\core\security\EntryPointUnauthorizedHandler.class
 com\jpm\leadgen\rest\resources\BlogEntryListResource.class
 com\jpm\leadgen\core\repositories\jpa\JpaBlogRepo.class
+com\jpm\leadgen\rest\resources\ModelEntityResource.class
 com\jpm\leadgen\core\services\impl\AccountServiceImpl.class
 com\jpm\leadgen\core\security\AccountUserDetails$1.class
 com\jpm\leadgen\core\services\exceptions\AccountExistsException.class

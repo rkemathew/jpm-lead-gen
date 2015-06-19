@@ -6,7 +6,7 @@ import org.springframework.hateoas.ResourceSupport;
 /**
  * Created by Chris on 6/27/14.
  */
-public class BlogEntryResource extends ResourceSupport {
+public class BlogEntryResource extends ModelEntityResource {
     private String title;
 
     private String content;
@@ -41,6 +41,8 @@ public class BlogEntryResource extends ResourceSupport {
         BlogEntry entry = new BlogEntry();
         entry.setTitle(title);
         entry.setContent(content);
+        entry.setErrorMessage(getErrorMessage());
+
         return entry;
     }
 }
