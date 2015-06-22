@@ -8,7 +8,7 @@ import com.jpm.leadgen.core.models.entities.Account;
 /**
  * Created by Chris on 6/28/14.
  */
-public class AccountResource extends ModelEntityResource {
+public class AccountResource extends ResourceSupport {
     private String name;
 
     private String password;
@@ -44,7 +44,6 @@ public class AccountResource extends ModelEntityResource {
         Account account = new Account();
         account.setName(name);
         account.setPassword(password);
-        account.setErrorMessage(getErrorMessage());
         return account;
     }
 }

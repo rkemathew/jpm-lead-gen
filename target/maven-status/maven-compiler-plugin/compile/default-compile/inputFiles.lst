@@ -2,11 +2,16 @@ C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\secu
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\repositories\BlogEntryRepo.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\rest\mvc\AccountController.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\repositories\CustomerRepo.java
+C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\rest\resources\CustomerGoalResource.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\services\impl\BlogEntryServiceImpl.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\rest\resources\asm\BlogListResourceAsm.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\services\util\BlogEntryList.java
+C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\rest\mvc\GlobalRestExceptionHandler.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\models\entities\Customer.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\services\util\AccountList.java
+C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\rest\mvc\ProposalController.java
+C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\models\entities\CustomerGoal.java
+C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\rest\resources\ModelEntityResource.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\rest\resources\CustomerListResource.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\rest\resources\asm\BlogEntryListResourceAsm.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\models\entities\Blog.java
@@ -39,6 +44,7 @@ C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\serv
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\security\SecurityConfig.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\repositories\jpa\JpaBlogEntryRepo.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\services\impl\AccountServiceImpl.java
+C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\models\entities\ErrorInfo.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\security\AuthSuccess.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\models\entities\Account.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\repositories\jpa\JpaBlogRepo.java
@@ -47,10 +53,12 @@ C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\rest\reso
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\security\SecurityWebAppInitializer.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\services\exceptions\BlogNotFoundException.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\services\exceptions\CustomerExistsException.java
+C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\models\entities\ProposalSession.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\rest\mvc\BlogController.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\security\EntryPointUnauthorizedHandler.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\services\exceptions\AccountDoesNotExistException.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\rest\resources\BlogEntryListResource.java
+C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\core\services\ProposalService.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\rest\resources\asm\AccountResourceAsm.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\rest\resources\asm\AccountListResourceAsm.java
 C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\java\com\jpm\leadgen\rest\exceptions\NotFoundException.java

@@ -4,7 +4,6 @@ import com.jpm.leadgen.core.models.entities.Customer;
 import com.jpm.leadgen.core.services.CustomerService;
 import com.jpm.leadgen.core.services.exceptions.CustomerExistsException;
 import com.jpm.leadgen.core.services.util.CustomerList;
-import com.jpm.leadgen.rest.exceptions.ConflictException;
 import com.jpm.leadgen.rest.resources.CustomerListResource;
 import com.jpm.leadgen.rest.resources.CustomerResource;
 import com.jpm.leadgen.rest.resources.asm.CustomerListResourceAsm;
@@ -41,21 +40,6 @@ public class CustomerController {
         return new ResponseEntity<CustomerListResource>(res, HttpStatus.OK);
     }
 
-/*
-    @RequestMapping(method = RequestMethod.GET)
-    @PreAuthorize("permitAll")
-    public ResponseEntity<CustomerListResource> findCustomerByCompanyName(@RequestParam(value = "companyName") String companyName) {
-        CustomerList customerList = null;
-        Customer customer = customerService.findCustomerByCompanyName(companyName);
-        if (customer != null) {
-            customerList = new CustomerList(Arrays.asList(customer));
-        }
-
-        CustomerListResource res = new CustomerListResourceAsm().toResource(customerList);
-        return new ResponseEntity<CustomerListResource>(res, HttpStatus.OK);
-    }
-*/
-
     @RequestMapping(value="/{customerId}", method = RequestMethod.GET)
     @PreAuthorize("permitAll")
     public ResponseEntity<CustomerResource> findCustomer(
@@ -74,23 +58,12 @@ public class CustomerController {
     @PreAuthorize("permitAll")
     public ResponseEntity<CustomerResource> createCustomer(
             @RequestBody CustomerResource sentCustomer
-    ) {
+    ) throws CustomerExistsException {
+        Customer customer = customerService.createCustomer(sentCustomer.toCustomer());
+        CustomerResource res = new CustomerResourceAsm().toResource(customer);
         HttpHeaders headers = new HttpHeaders();
-        HttpStatus httpStatus = null;
-        Customer customer = null;
-        CustomerResource res = null;
-        try {
-            customer = customerService.createCustomer(sentCustomer.toCustomer());
-            httpStatus = HttpStatus.CREATED;
-        } catch (CustomerExistsException exception) {
-            customer = new Customer();
-            customer.setErrorMessage(exception.getMessage());
-            httpStatus = HttpStatus.CONFLICT;
-        }
-
-        res = new CustomerResourceAsm().toResource(customer);
         headers.setLocation(URI.create(res.getLink("self").getHref()));
-        return new ResponseEntity<CustomerResource>(res, headers, httpStatus);
+        return new ResponseEntity<CustomerResource>(res, headers, HttpStatus.CREATED);
     }
 
     @RequestMapping(value="/{customerId}", method = RequestMethod.PUT)

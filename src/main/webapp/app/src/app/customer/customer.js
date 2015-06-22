@@ -18,19 +18,8 @@ angular.module('ngBoilerplate.customer', ['ui.router', 'ngResource', 'hateoas', 
     var service = {};
 
     service.createCustomer = function(customer) {
-        var deferred = $q.defer();
-
         var Customer = $resource("/jpm-lead-gen/rest/customers");
-        Customer.save({}, customer).$promise.then(
-            function(data) {
-                deferred.resolve(data);
-            },
-            function(error) {
-                deferred.reject(error);
-            }
-        );
-
-        return deferred.promise;
+        return Customer.save({}, customer).$promise;
     };
 
     service.getAllCustomers = function() {
@@ -38,11 +27,6 @@ angular.module('ngBoilerplate.customer', ['ui.router', 'ngResource', 'hateoas', 
         return Customer.get().$promise.then(function(data) {
             return data.customers;
         });
-    };
-
-    service.getCustomerByCompanyName = function(companyName) {
-        var Customer = $resource("/jpm-lead-gen/rest/customers");
-        return Customer.get({paramCompanyName: companyName}).$promise;
     };
 
     return service;
