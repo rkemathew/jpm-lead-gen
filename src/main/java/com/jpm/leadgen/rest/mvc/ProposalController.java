@@ -26,8 +26,8 @@ import java.net.URI;
 /**
  * Created by Ronnie on 6/11/15.
  */
-//@Controller
-//@RequestMapping(produces= MediaType.APPLICATION_JSON_VALUE, value="/rest/proposal")
+@Controller
+@RequestMapping(produces= MediaType.APPLICATION_JSON_VALUE, value="/rest/proposal")
 public class ProposalController {
     private ProposalService proposalService;
 

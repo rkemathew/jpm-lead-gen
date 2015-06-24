@@ -11,5 +11,8 @@
     "angular-ui-select2": "~0.0.5",
     "angular-growl-v2": "~0.7.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "angular-input-masks": "~1.5.1",
+    "kendo-ui-core": "~2015.1.616"
+  }
 }

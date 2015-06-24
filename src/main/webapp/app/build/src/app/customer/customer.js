@@ -1,4 +1,6 @@
-angular.module('ngBoilerplate.customer', ['ui.router', 'ngResource', 'hateoas', 'angular-growl', 'ui.select2'])
+angular.module('ngBoilerplate.customer', [
+    'ui.router', 'ngResource', 'hateoas', 'angular-growl', 'kendo.directives'
+])
 .config(function($stateProvider, growlProvider) {
     $stateProvider.state('manageCustomers', {
             url:'/manage/customers',
@@ -22,9 +24,16 @@ angular.module('ngBoilerplate.customer', ['ui.router', 'ngResource', 'hateoas', 
         return Customer.save({}, customer).$promise;
     };
 
-    service.getAllCustomers = function() {
+    service.getAllCustomers = function(options) {
         var Customer = $resource("/jpm-lead-gen/rest/customers");
         return Customer.get().$promise.then(function(data) {
+            options.success(data.customers);
+        });
+    };
+
+    service.getCustomersLike = function(companyName) {
+        var Customer = $resource("/jpm-lead-gen/rest/customers?paramCompanyName=:paramCompanyName");
+        return Customer.get({paramCompanyName: companyName}).$promise.then(function(data) {
             return data.customers;
         });
     };
@@ -75,12 +84,12 @@ angular.module('ngBoilerplate.customer', ['ui.router', 'ngResource', 'hateoas', 
         { 'value': 'MT', 'display': 'Montana' },
         { 'value': 'NE', 'display': 'Nebraska' },
         { 'value': 'NV', 'display': 'Nevada' },
-        { 'value': 'NH', 'display': 'NewHampshire' },
-        { 'value': 'NJ', 'display': 'NewJersey' },
-        { 'value': 'NM', 'display': 'NewMexico' },
-        { 'value': 'NY', 'display': 'NewYork' },
-        { 'value': 'NC', 'display': 'NorthCarolina' },
-        { 'value': 'ND', 'display': 'NorthDakota' },
+        { 'value': 'NH', 'display': 'New Hampshire' },
+        { 'value': 'NJ', 'display': 'New Jersey' },
+        { 'value': 'NM', 'display': 'New Mexico' },
+        { 'value': 'NY', 'display': 'New York' },
+        { 'value': 'NC', 'display': 'North Carolina' },
+        { 'value': 'ND', 'display': 'North Dakota' },
         { 'value': 'MP', 'display': 'Northern Mariana Islands' },
         { 'value': 'OH', 'display': 'Ohio' },
         { 'value': 'OK', 'display': 'Oklahoma' },
@@ -97,7 +106,7 @@ angular.module('ngBoilerplate.customer', ['ui.router', 'ngResource', 'hateoas', 
         { 'value': 'VA', 'display': 'Virginia' },
         { 'value': 'VI', 'display': 'US Virgin Islands' },
         { 'value': 'WA', 'display': 'Washington' },
-        { 'value': 'WV', 'display': 'WestVirginia' },
+        { 'value': 'WV', 'display': 'West Virginia' },
         { 'value': 'WI', 'display': 'Wisconsin' },
         { 'value': 'WY', 'display': 'Wyoming' }
     ];

@@ -10,7 +10,7 @@ import java.util.List;
 public interface CustomerRepo {
     public List<Customer> findAllCustomers();
     public Customer findCustomer(Long id);
-    public Customer findCustomerByCompanyName(String companyName);
+    public List<Customer> findCustomersByCompanyName(String companyName);
     public Customer createCustomer(Customer data);
     public Customer updateCustomer(Long id, Customer data);
     public Customer deleteCustomer(Long id);

@@ -9,6 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Iterator;
+import java.util.List;
+
 /**
  * Created by Ronnie on 6/11/15.
  */
@@ -29,16 +32,19 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer findCustomerByCompanyName(String companyName) {
-        return customerRepo.findCustomerByCompanyName(companyName);
+    public CustomerList findCustomersLike(String companyName) {
+        return new CustomerList(customerRepo.findCustomersByCompanyName(companyName));
     }
 
     @Override
     public Customer createCustomer(Customer customer) {
-        Customer customerSameCompanyName = customerRepo.findCustomerByCompanyName(customer.getCompanyName());
-
-        if(customerSameCompanyName != null) {
-            throw new CustomerExistsException("Customer with Company Name '" + customer.getCompanyName() + "' already exists");
+        List<Customer> customerList = customerRepo.findCustomersByCompanyName(customer.getCompanyName());
+        Iterator<Customer> iterator = customerList.iterator();
+        while (iterator.hasNext()) {
+            Customer customerFromList = iterator.next();
+            if (customerFromList.getCompanyName().equals(customer.getCompanyName())) {
+                throw new CustomerExistsException("Customer with Company Name '" + customer.getCompanyName() + "' already exists");
+            }
         }
 
         return customerRepo.createCustomer(customer);

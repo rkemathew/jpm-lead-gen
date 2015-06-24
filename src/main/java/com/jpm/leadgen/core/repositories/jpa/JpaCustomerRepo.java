@@ -29,15 +29,10 @@ public class JpaCustomerRepo implements CustomerRepo {
     }
 
     @Override
-    public Customer findCustomerByCompanyName(String companyName) {
-        Query query = em.createQuery("SELECT c FROM Customer c WHERE c.companyName = ?1");
-        query.setParameter(1, companyName);
-        List<Customer> customers = query.getResultList();
-        if(customers.size() == 0) {
-            return null;
-        } else {
-            return customers.get(0);
-        }
+    public List<Customer> findCustomersByCompanyName(String companyName) {
+        Query query = em.createQuery("SELECT c FROM Customer c WHERE c.companyName LIKE ?1");
+        query.setParameter(1, companyName + "%");
+        return query.getResultList();
     }
 
     @Override

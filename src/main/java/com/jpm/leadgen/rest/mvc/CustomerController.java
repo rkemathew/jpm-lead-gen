@@ -54,6 +54,16 @@ public class CustomerController {
         }
     }
 
+    @RequestMapping(params = { "paramCompanyName" }, method = RequestMethod.GET)
+    @PreAuthorize("permitAll")
+    public ResponseEntity<CustomerListResource> findCustomersWithCompanyNameLike(
+            @RequestParam(value = "paramCompanyName") String paramCompanyName
+    ) {
+        CustomerList customerList = customerService.findCustomersLike(paramCompanyName);
+        CustomerListResource res = new CustomerListResourceAsm().toResource(customerList);
+        return new ResponseEntity<CustomerListResource>(res, HttpStatus.OK);
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     @PreAuthorize("permitAll")
     public ResponseEntity<CustomerResource> createCustomer(

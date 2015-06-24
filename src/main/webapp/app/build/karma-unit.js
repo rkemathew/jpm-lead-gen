@@ -21,6 +21,8 @@ module.exports = function ( karma ) {
       'vendor/select2/select2.min.js',
       'vendor/angular-ui-select2/src/select2.js',
       'vendor/angular-growl-v2/build/angular-growl.js',
+      'vendor/angular-input-masks/angular-input-masks-standalone.min.js',
+      'vendor/kendo-ui-core/js/kendo.ui.core.min.js',
       'build/templates-app.js',
       'build/templates-common.js',
       'vendor/angular-mocks/angular-mocks.js',

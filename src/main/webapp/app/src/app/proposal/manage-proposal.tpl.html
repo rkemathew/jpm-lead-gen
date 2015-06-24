@@ -3,78 +3,142 @@
         Proposal Session
     </h1>
     <form name="proposalForm" class="form-horizontal">
-        <tabset>
-            <tab>
-                <tab-heading>
-                    <i class="fa fa-soccer-ball-o"></i>
-                    Customer Goal
-                </tab-heading>
-                <br/>
-                <div>
-                    Gather Customer Goals Form
-                </div>
-            </tab>
-            <tab>
-                <tab-heading>
-                    <i class="fa fa-pencil-square"></i>
-                    JPM Model
-                </tab-heading>
-                <br/>
-                <div>
-                    Choose JPM Model Form
-                </div>
-            </tab>
-            <tab>
-                <tab-heading>
-                    <i class="fa fa-calculator"></i>
-                    Assumed Sales Calc
-                </tab-heading>
-                <br/>
-                <div>
-                    Assumed Sales Calculation Form
-                </div>
-            </tab>
-            <tab>
-                <tab-heading>
-                    <i class="fa fa-calculator"></i>
-                    Commission Calc
-                </tab-heading>
-                <br/>
-                <div>
-                    Commission Calculation Form
-                </div>
-            </tab>
-            <tab>
-                <tab-heading>
-                    <i class="fa fa-calculator"></i>
-                    Recruiting Effort Calc
-                </tab-heading>
-                <br/>
-                <div>
-                    Recruiting Effort Calculation Form
-                </div>
-            </tab>
-            <tab>
-                <tab-heading>
-                    <i class="fa fa-calculator"></i>
-                    Advanced:Debt Calc
-                </tab-heading>
-                <br/>
-                <div>
-                    Advanced to Debt Ratio Calculation Form
-                </div>
-            </tab>
-            <tab>
-                <tab-heading>
-                    <i class="fa fa-newspaper-o"></i>
-                    Proposal
-                </tab-heading>
-                <br/>
-                <div>
-                    The Proposal Output form
-                </div>
-            </tab>
-        </tabset>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active">
+                <a href="" ui-sref="customerGoal" role="tab" data-toggle="tab">
+                    <i class="fa fa-soccer-ball-o"></i> Customer Goal
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="" ui-sref="jpmModel" role="tab" data-toggle="tab">
+                    <i class="fa fa-pencil-square"></i> JPM Model
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="" ui-sref="assumedSalesCalc" role="tab" data-toggle="tab">
+                    <i class="fa fa-calculator"></i> Assumed Sales Calc
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="" ui-sref="commissionCalc" role="tab" data-toggle="tab">
+                    <i class="fa fa-calculator"></i> Commission Calc
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="" ui-sref="recruitingEffortCalc" role="tab" data-toggle="tab">
+                    <i class="fa fa-calculator"></i> Recruiting Effort Calc
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="" ui-sref="advancedDebtCalc" role="tab" data-toggle="tab">
+                    <i class="fa fa-calculator"></i> Advanced:Debt Calc
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="" ui-sref="proposalOutput" role="tab" data-toggle="tab">
+                    <i class="fa fa-newspaper-o"></i> Proposal
+                </a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="customerGoal">
+                <h1 class="page-header">Customer Goals</h1>
+
+                <form name="proposalSessionForm" ng-submit="createProposalSession()" class="form-horizontal">
+                    <div class="form-group form-group-lg">
+                        <label class="col-sm-2 control-label" for="contactName">Contact Name:</label>
+                        <div class="col-sm-4">
+                            <input id="contactName" type="text" ng-model="proposalSession.customerGoal.contactName" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <label class="col-sm-2 control-label" for="companyName">Company Name:</label>
+                        <div class="col-sm-4">
+                            <input kendo-auto-complete id="companyName"
+                                   ng-model="proposalSession.customerGoal.companyName"
+                                   k-options="customerAutoComplete" class="form-control"/>
+                        </div>
+<!--
+                        <div class="col-sm-4">
+                            <input id="companyName" type="text" ng-model="proposalSession.customerGoal.companyName" class="form-control"/>
+                        </div>
+-->
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <label class="col-sm-2 control-label" for="currentValuation">Current Valuation:</label>
+                        <div class="col-sm-4">
+                            <input id="currentValuation" type="text" ng-model="proposalSession.customerGoal.currentValuation" class="form-control" ui-money-mask/>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <label class="col-sm-5 control-label"><h4>Annual Revenue Goals</h4></label>
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <label class="col-sm-2 control-label" for="revenueGoalYear1">Year 1:</label>
+                        <div class="col-sm-4">
+                            <input id="revenueGoalYear1" type="text" ng-model="proposalSession.customerGoal.revenueGoalYear1" class="form-control" ui-money-mask/>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <label class="col-sm-2 control-label" for="revenueGoalYear2">Year 2:</label>
+                        <div class="col-sm-4">
+                            <input id="revenueGoalYear2" type="text" ng-model="proposalSession.customerGoal.revenueGoalYear2" class="form-control" ui-money-mask/>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <label class="col-sm-2 control-label" for="revenueGoalYear3">Year 3:</label>
+                        <div class="col-sm-4">
+                            <input id="revenueGoalYear3" type="text" ng-model="proposalSession.customerGoal.revenueGoalYear3" class="form-control" ui-money-mask/>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <label class="col-sm-2 control-label" for="revenueGoalYear4">Year 4:</label>
+                        <div class="col-sm-4">
+                            <input id="revenueGoalYear4" type="text" ng-model="proposalSession.customerGoal.revenueGoalYear4" class="form-control" ui-money-mask/>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <label class="col-sm-2 control-label" for="revenueGoalYear5">Year 5:</label>
+                        <div class="col-sm-4">
+                            <input id="revenueGoalYear5" type="text" ng-model="proposalSession.customerGoal.revenueGoalYear5" class="form-control" ui-money-mask/>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <label class="col-sm-2 control-label" for="upfrontFees">Upfront Fees:</label>
+                        <div class="col-sm-4">
+                            <input id="upfrontFees" type="text" ng-model="proposalSession.customerGoal.upfrontFees" class="form-control" ui-money-mask/>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <label class="col-sm-2 control-label" for="upfrontFees">Lag Time:</label>
+                        <div class="col-sm-4">
+                            <input id="lagTime" type="number" ng-model="proposalSession.customerGoal.lagTime" class="form-control" ui-number-mask="0" min="0" max="12"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="jpmModel">
+                JPM Model
+            </div>
+            <div role="tabpanel" class="tab-pane" id="assumedSalesCalc">
+                Assumed Sales Caculator
+            </div>
+            <div role="tabpanel" class="tab-pane" id="commissionCalc">
+                Commission Calculator
+            </div>
+            <div role="tabpanel" class="tab-pane" id="recruitingEffortCalc">
+                Recruiting Effort Calculator
+            </div>
+            <div role="tabpanel" class="tab-pane" id="advancedDebtCalc">
+                Advanced to Debt Ratio Calculator
+            </div>
+            <div role="tabpanel" class="tab-pane" id="proposalOutput">
+                Proposal Output
+            </div>
+        </div>
     </form>
 </div>
 

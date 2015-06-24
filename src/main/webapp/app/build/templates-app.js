@@ -406,7 +406,7 @@ angular.module("customer/manage-customer.tpl.html", []).run(["$templateCache", f
     "        <div class=\"form-group form-group-lg\">\n" +
     "            <label class=\"col-sm-2 control-label\" for=\"state\">State:</label>\n" +
     "            <div class=\"col-sm-4\">\n" +
-    "                <select ui-select2 id=\"state\" ng-model=\"customer.state\" data-placeholder=\"Choose State\" style=\"width: 100%\">\n" +
+    "                <select kendo-combo-box id=\"state\" ng-model=\"customer.state\" data-placeholder=\"Choose State\" class=\"form-control\">\n" +
     "                    <option value=\"\"></option>\n" +
     "                    <option ng-repeat=\"state in states\" value=\"{{state.value}}\">{{state.display}}</option>\n" +
     "                </select>\n" +
@@ -415,19 +415,19 @@ angular.module("customer/manage-customer.tpl.html", []).run(["$templateCache", f
     "        <div class=\"form-group form-group-lg\">\n" +
     "            <label class=\"col-sm-2 control-label\" for=\"zip\">Zip:</label>\n" +
     "            <div class=\"col-sm-4\">\n" +
-    "                <input id=\"zip\" type=\"text\" ng-model=\"customer.zip\" ui-mask=\"99999\" class=\"form-control\"/>\n" +
+    "                <input id=\"zip\" kendo-masked-text-box ng-model=\"customer.zip\" class=\"form-control\" k-mask=\"'99999-0000'\" k-prompt-char=\"' '\"/>\n" +
     "            </div>\n" +
     "        </div>\n" +
     "        <div class=\"form-group form-group-lg\">\n" +
     "            <label class=\"col-sm-2 control-label\" for=\"phone1\">Phone 1:</label>\n" +
     "            <div class=\"col-sm-4\">\n" +
-    "                <input id=\"phone1\" type=\"text\" ng-model=\"customer.phone1\" ui-mask=\"(999) 999-9999\" class=\"form-control\"/>\n" +
+    "                <input id=\"phone1\" kendo-masked-text-box ng-model=\"customer.phone1\" class=\"form-control\" k-mask=\"'(999) 000-0000'\" k-prompt-char=\"' '\"/>\n" +
     "            </div>\n" +
     "        </div>\n" +
     "        <div class=\"form-group form-group-lg\">\n" +
     "            <label class=\"col-sm-2 control-label\" for=\"phone2\">Phone 2:</label>\n" +
     "            <div class=\"col-sm-4\">\n" +
-    "                <input id=\"phone2\" type=\"text\" ng-model=\"customer.phone2\" ui-mask=\"(999) 999-9999\" class=\"form-control\"/>\n" +
+    "                <input id=\"phone2\" kendo-masked-text-box ng-model=\"customer.phone2\" class=\"form-control\" k-mask=\"'(999) 000-0000'\"/>\n" +
     "            </div>\n" +
     "        </div>\n" +
     "        <div class=\"form-group form-group-lg\" ng-class=\"{ 'has-error': customerForm.email.$invalid }\">\n" +
@@ -604,78 +604,142 @@ angular.module("proposal/manage-proposal.tpl.html", []).run(["$templateCache", f
     "        Proposal Session\n" +
     "    </h1>\n" +
     "    <form name=\"proposalForm\" class=\"form-horizontal\">\n" +
-    "        <tabset>\n" +
-    "            <tab>\n" +
-    "                <tab-heading>\n" +
-    "                    <i class=\"fa fa-soccer-ball-o\"></i>\n" +
-    "                    Customer Goal\n" +
-    "                </tab-heading>\n" +
-    "                <br/>\n" +
-    "                <div>\n" +
-    "                    Gather Customer Goals Form\n" +
-    "                </div>\n" +
-    "            </tab>\n" +
-    "            <tab>\n" +
-    "                <tab-heading>\n" +
-    "                    <i class=\"fa fa-pencil-square\"></i>\n" +
-    "                    JPM Model\n" +
-    "                </tab-heading>\n" +
-    "                <br/>\n" +
-    "                <div>\n" +
-    "                    Choose JPM Model Form\n" +
-    "                </div>\n" +
-    "            </tab>\n" +
-    "            <tab>\n" +
-    "                <tab-heading>\n" +
-    "                    <i class=\"fa fa-calculator\"></i>\n" +
-    "                    Assumed Sales Calc\n" +
-    "                </tab-heading>\n" +
-    "                <br/>\n" +
-    "                <div>\n" +
-    "                    Assumed Sales Calculation Form\n" +
-    "                </div>\n" +
-    "            </tab>\n" +
-    "            <tab>\n" +
-    "                <tab-heading>\n" +
-    "                    <i class=\"fa fa-calculator\"></i>\n" +
-    "                    Commission Calc\n" +
-    "                </tab-heading>\n" +
-    "                <br/>\n" +
-    "                <div>\n" +
-    "                    Commission Calculation Form\n" +
-    "                </div>\n" +
-    "            </tab>\n" +
-    "            <tab>\n" +
-    "                <tab-heading>\n" +
-    "                    <i class=\"fa fa-calculator\"></i>\n" +
-    "                    Recruiting Effort Calc\n" +
-    "                </tab-heading>\n" +
-    "                <br/>\n" +
-    "                <div>\n" +
-    "                    Recruiting Effort Calculation Form\n" +
-    "                </div>\n" +
-    "            </tab>\n" +
-    "            <tab>\n" +
-    "                <tab-heading>\n" +
-    "                    <i class=\"fa fa-calculator\"></i>\n" +
-    "                    Advanced:Debt Calc\n" +
-    "                </tab-heading>\n" +
-    "                <br/>\n" +
-    "                <div>\n" +
-    "                    Advanced to Debt Ratio Calculation Form\n" +
-    "                </div>\n" +
-    "            </tab>\n" +
-    "            <tab>\n" +
-    "                <tab-heading>\n" +
-    "                    <i class=\"fa fa-newspaper-o\"></i>\n" +
-    "                    Proposal\n" +
-    "                </tab-heading>\n" +
-    "                <br/>\n" +
-    "                <div>\n" +
-    "                    The Proposal Output form\n" +
-    "                </div>\n" +
-    "            </tab>\n" +
-    "        </tabset>\n" +
+    "        <!-- Nav tabs -->\n" +
+    "        <ul class=\"nav nav-tabs\">\n" +
+    "            <li role=\"presentation\" class=\"active\">\n" +
+    "                <a href=\"\" ui-sref=\"customerGoal\" role=\"tab\" data-toggle=\"tab\">\n" +
+    "                    <i class=\"fa fa-soccer-ball-o\"></i> Customer Goal\n" +
+    "                </a>\n" +
+    "            </li>\n" +
+    "            <li role=\"presentation\">\n" +
+    "                <a href=\"\" ui-sref=\"jpmModel\" role=\"tab\" data-toggle=\"tab\">\n" +
+    "                    <i class=\"fa fa-pencil-square\"></i> JPM Model\n" +
+    "                </a>\n" +
+    "            </li>\n" +
+    "            <li role=\"presentation\">\n" +
+    "                <a href=\"\" ui-sref=\"assumedSalesCalc\" role=\"tab\" data-toggle=\"tab\">\n" +
+    "                    <i class=\"fa fa-calculator\"></i> Assumed Sales Calc\n" +
+    "                </a>\n" +
+    "            </li>\n" +
+    "            <li role=\"presentation\">\n" +
+    "                <a href=\"\" ui-sref=\"commissionCalc\" role=\"tab\" data-toggle=\"tab\">\n" +
+    "                    <i class=\"fa fa-calculator\"></i> Commission Calc\n" +
+    "                </a>\n" +
+    "            </li>\n" +
+    "            <li role=\"presentation\">\n" +
+    "                <a href=\"\" ui-sref=\"recruitingEffortCalc\" role=\"tab\" data-toggle=\"tab\">\n" +
+    "                    <i class=\"fa fa-calculator\"></i> Recruiting Effort Calc\n" +
+    "                </a>\n" +
+    "            </li>\n" +
+    "            <li role=\"presentation\">\n" +
+    "                <a href=\"\" ui-sref=\"advancedDebtCalc\" role=\"tab\" data-toggle=\"tab\">\n" +
+    "                    <i class=\"fa fa-calculator\"></i> Advanced:Debt Calc\n" +
+    "                </a>\n" +
+    "            </li>\n" +
+    "            <li role=\"presentation\">\n" +
+    "                <a href=\"\" ui-sref=\"proposalOutput\" role=\"tab\" data-toggle=\"tab\">\n" +
+    "                    <i class=\"fa fa-newspaper-o\"></i> Proposal\n" +
+    "                </a>\n" +
+    "            </li>\n" +
+    "        </ul>\n" +
+    "\n" +
+    "        <!-- Tab panes -->\n" +
+    "        <div class=\"tab-content\">\n" +
+    "            <div role=\"tabpanel\" class=\"tab-pane active\" id=\"customerGoal\">\n" +
+    "                <h1 class=\"page-header\">Customer Goals</h1>\n" +
+    "\n" +
+    "                <form name=\"proposalSessionForm\" ng-submit=\"createProposalSession()\" class=\"form-horizontal\">\n" +
+    "                    <div class=\"form-group form-group-lg\">\n" +
+    "                        <label class=\"col-sm-2 control-label\" for=\"contactName\">Contact Name:</label>\n" +
+    "                        <div class=\"col-sm-4\">\n" +
+    "                            <input id=\"contactName\" type=\"text\" ng-model=\"proposalSession.customerGoal.contactName\" class=\"form-control\" />\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"form-group form-group-lg\">\n" +
+    "                        <label class=\"col-sm-2 control-label\" for=\"companyName\">Company Name:</label>\n" +
+    "                        <div class=\"col-sm-4\">\n" +
+    "                            <input kendo-auto-complete id=\"companyName\"\n" +
+    "                                   ng-model=\"proposalSession.customerGoal.companyName\"\n" +
+    "                                   k-options=\"customerAutoComplete\" class=\"form-control\"/>\n" +
+    "                        </div>\n" +
+    "<!--\n" +
+    "                        <div class=\"col-sm-4\">\n" +
+    "                            <input id=\"companyName\" type=\"text\" ng-model=\"proposalSession.customerGoal.companyName\" class=\"form-control\"/>\n" +
+    "                        </div>\n" +
+    "-->\n" +
+    "                    </div>\n" +
+    "                    <div class=\"form-group form-group-lg\">\n" +
+    "                        <label class=\"col-sm-2 control-label\" for=\"currentValuation\">Current Valuation:</label>\n" +
+    "                        <div class=\"col-sm-4\">\n" +
+    "                            <input id=\"currentValuation\" type=\"text\" ng-model=\"proposalSession.customerGoal.currentValuation\" class=\"form-control\" ui-money-mask/>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"form-group form-group-lg\">\n" +
+    "                        <label class=\"col-sm-5 control-label\"><h4>Annual Revenue Goals</h4></label>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"form-group form-group-lg\">\n" +
+    "                        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear1\">Year 1:</label>\n" +
+    "                        <div class=\"col-sm-4\">\n" +
+    "                            <input id=\"revenueGoalYear1\" type=\"text\" ng-model=\"proposalSession.customerGoal.revenueGoalYear1\" class=\"form-control\" ui-money-mask/>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"form-group form-group-lg\">\n" +
+    "                        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear2\">Year 2:</label>\n" +
+    "                        <div class=\"col-sm-4\">\n" +
+    "                            <input id=\"revenueGoalYear2\" type=\"text\" ng-model=\"proposalSession.customerGoal.revenueGoalYear2\" class=\"form-control\" ui-money-mask/>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"form-group form-group-lg\">\n" +
+    "                        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear3\">Year 3:</label>\n" +
+    "                        <div class=\"col-sm-4\">\n" +
+    "                            <input id=\"revenueGoalYear3\" type=\"text\" ng-model=\"proposalSession.customerGoal.revenueGoalYear3\" class=\"form-control\" ui-money-mask/>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"form-group form-group-lg\">\n" +
+    "                        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear4\">Year 4:</label>\n" +
+    "                        <div class=\"col-sm-4\">\n" +
+    "                            <input id=\"revenueGoalYear4\" type=\"text\" ng-model=\"proposalSession.customerGoal.revenueGoalYear4\" class=\"form-control\" ui-money-mask/>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"form-group form-group-lg\">\n" +
+    "                        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear5\">Year 5:</label>\n" +
+    "                        <div class=\"col-sm-4\">\n" +
+    "                            <input id=\"revenueGoalYear5\" type=\"text\" ng-model=\"proposalSession.customerGoal.revenueGoalYear5\" class=\"form-control\" ui-money-mask/>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"form-group form-group-lg\">\n" +
+    "                        <label class=\"col-sm-2 control-label\" for=\"upfrontFees\">Upfront Fees:</label>\n" +
+    "                        <div class=\"col-sm-4\">\n" +
+    "                            <input id=\"upfrontFees\" type=\"text\" ng-model=\"proposalSession.customerGoal.upfrontFees\" class=\"form-control\" ui-money-mask/>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"form-group form-group-lg\">\n" +
+    "                        <label class=\"col-sm-2 control-label\" for=\"upfrontFees\">Lag Time:</label>\n" +
+    "                        <div class=\"col-sm-4\">\n" +
+    "                            <input id=\"lagTime\" type=\"number\" ng-model=\"proposalSession.customerGoal.lagTime\" class=\"form-control\" ui-number-mask=\"0\" min=\"0\" max=\"12\"/>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                </form>\n" +
+    "            </div>\n" +
+    "            <div role=\"tabpanel\" class=\"tab-pane\" id=\"jpmModel\">\n" +
+    "                JPM Model\n" +
+    "            </div>\n" +
+    "            <div role=\"tabpanel\" class=\"tab-pane\" id=\"assumedSalesCalc\">\n" +
+    "                Assumed Sales Caculator\n" +
+    "            </div>\n" +
+    "            <div role=\"tabpanel\" class=\"tab-pane\" id=\"commissionCalc\">\n" +
+    "                Commission Calculator\n" +
+    "            </div>\n" +
+    "            <div role=\"tabpanel\" class=\"tab-pane\" id=\"recruitingEffortCalc\">\n" +
+    "                Recruiting Effort Calculator\n" +
+    "            </div>\n" +
+    "            <div role=\"tabpanel\" class=\"tab-pane\" id=\"advancedDebtCalc\">\n" +
+    "                Advanced to Debt Ratio Calculator\n" +
+    "            </div>\n" +
+    "            <div role=\"tabpanel\" class=\"tab-pane\" id=\"proposalOutput\">\n" +
+    "                Proposal Output\n" +
+    "            </div>\n" +
+    "        </div>\n" +
     "    </form>\n" +
     "</div>\n" +
     "\n" +

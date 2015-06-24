@@ -3,15 +3,17 @@ package com.jpm.leadgen.core.models.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.math.BigDecimal;
 
 /**
  * Created by Super User on 6/11/2015.
  */
-//@Entity
+@Entity
 public class CustomerGoal {
     @Id @GeneratedValue
     private Long id;
+    @OneToOne
     private Customer customer;
     private BigDecimal currentValuation;
     private BigDecimal revenueGoalYear1;

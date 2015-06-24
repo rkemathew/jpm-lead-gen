@@ -9,7 +9,7 @@ import com.jpm.leadgen.core.services.util.CustomerList;
 public interface CustomerService {
     public CustomerList findAllCustomers();
     public Customer findCustomer(Long id);
-    public Customer findCustomerByCompanyName(String companyName);
+    public CustomerList findCustomersLike(String companyName);
     public Customer createCustomer(Customer customer);
     public Customer updateCustomer(Long id, Customer customer);
     public Customer deleteCustomer(Long id);
