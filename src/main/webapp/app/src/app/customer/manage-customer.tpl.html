@@ -6,25 +6,25 @@
         <div class="form-group form-group-lg">
             <label class="col-sm-2 control-label" for="contactName">Contact Name:</label>
             <div class="col-sm-4">
-                <input id="contactName" type="text" ng-model="customer.contactName" class="form-control" placeholder="Enter Company Contact Name"/>
+                <input id="contactName" type="text" ng-model="customer.contactName" placeholder="Enter Company Contact Name" class="form-control" />
             </div>
         </div>
         <div class="form-group form-group-lg">
             <label class="col-sm-2 control-label" for="companyName">Company Name:</label>
             <div class="col-sm-4">
-                <input id="companyName" type="text" ng-model="customer.companyName" class="form-control" placeholder="Enter Company Name"/>
+                <input id="companyName" type="text" ng-model="customer.companyName" placeholder="Enter Company Name" class="form-control" />
             </div>
         </div>
         <div class="form-group form-group-lg">
             <label class="col-sm-2 control-label" for="addressStreet1">Address 1:</label>
             <div class="col-sm-4">
-                <input id="addressStreet1" type="text" ng-model="customer.addressStreet1" class="form-control" placeholder="Enter Street Address"/>
+                <input id="addressStreet1" type="text" ng-model="customer.addressStreet1" placeholder="Enter Street Address" class="form-control"/>
             </div>
         </div>
         <div class="form-group form-group-lg">
             <label class="col-sm-2 control-label" for="addressStreet2">Address 2:</label>
             <div class="col-sm-4">
-                <input id="addressStreet2" type="text" ng-model="customer.addressStreet2" class="form-control" placeholder="Optional Additional Street Address"/>
+                <input id="addressStreet2" type="text" ng-model="customer.addressStreet2" placeholder="Optional Additional Street Address" class="form-control" />
             </div>
         </div>
         <div class="form-group form-group-lg">
@@ -36,7 +36,7 @@
         <div class="form-group form-group-lg">
             <label class="col-sm-2 control-label" for="state">State:</label>
             <div class="col-sm-4">
-                <select kendo-combo-box id="state" ng-model="customer.state" data-placeholder="Choose State" class="form-control">
+                <select kendo-combo-box id="state" ng-model="customer.state" data-placeholder="'Choose State'" class="form-control">
                     <option value=""></option>
                     <option ng-repeat="state in states" value="{{state.value}}">{{state.display}}</option>
                 </select>
@@ -45,19 +45,19 @@
         <div class="form-group form-group-lg">
             <label class="col-sm-2 control-label" for="zip">Zip:</label>
             <div class="col-sm-4">
-                <input id="zip" kendo-masked-text-box ng-model="customer.zip" class="form-control" k-mask="'99999-0000'" k-prompt-char="' '"/>
+                <input id="zip" kendo-masked-text-box raw-mask="customer.zip" k-mask="'99999-0000'" k-prompt-char="' '" class="form-control"/>
             </div>
         </div>
         <div class="form-group form-group-lg">
             <label class="col-sm-2 control-label" for="phone1">Phone 1:</label>
             <div class="col-sm-4">
-                <input id="phone1" kendo-masked-text-box ng-model="customer.phone1" class="form-control" k-mask="'(999) 000-0000'" k-prompt-char="' '"/>
+                <input id="phone1" kendo-masked-text-box raw-mask="customer.phone1" k-mask="'(999) 000-0000'" k-prompt-char="' '" class="form-control" />
             </div>
         </div>
         <div class="form-group form-group-lg">
             <label class="col-sm-2 control-label" for="phone2">Phone 2:</label>
             <div class="col-sm-4">
-                <input id="phone2" kendo-masked-text-box ng-model="customer.phone2" class="form-control" k-mask="'(999) 000-0000'"/>
+                <input id="phone2" kendo-masked-text-box raw-mask="customer.phone2" k-mask="'(999) 000-0000'" k-prompt-char="' '" class="form-control"/>
             </div>
         </div>
         <div class="form-group form-group-lg" ng-class="{ 'has-error': customerForm.email.$invalid }">

@@ -22,15 +22,26 @@ angular.module('ngBoilerplate.proposal', [
     return service;
 })
 .controller("ManageProposalCtrl", function($scope, proposalService, customerService, $state, growl) {
-    //$scope.customerDataSource = proposalService.getCustomersLike($scope.proposalSession.customerGoal.companyName);
     $scope.customerAutoComplete = {
+        minLength: 2,
         dataTextField: 'companyName',
         dataSource: new kendo.data.DataSource({
+            serverFiltering: true,
             transport: {
                 read: function(options) {
-                    return customerService.getAllCustomers(options);
+                    if ($scope.proposalSession.customerGoal.companyName.length >= 2) {
+                        customerService.getCustomersLike($scope.proposalSession.customerGoal.companyName).then(function(data) {
+                            return options.success(data.customers);
+                        });
+                    } else {
+                        return options.success([]);
+                    }
                 }
             }
-        })
+        }),
+        select: function(e) {
+            var dataItem = this.dataItem(e.item.index());
+            $scope.proposalSession.customerGoal.contactName = dataItem.contactName;
+        }
     };
 });

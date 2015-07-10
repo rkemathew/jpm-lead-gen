@@ -80,8 +80,9 @@ module.exports = {
     css: [
       'vendor/select2/select2.css',
       'vendor/angular-growl-v2/build/angular-growl.css',
-      'vendor/kendo-ui-core/styles/kendo.common.bootstrap.min.css',
-      'vendor/kendo-ui-core/styles/kendo.default.min.css'
+      'vendor/kendo-ui-core/styles/kendo.common-bootstrap.core.min.css',
+      'vendor/kendo-ui-core/styles/kendo.common-bootstrap.min.css',
+      'vendor/kendo-ui-core/styles/kendo.bootstrap.min.css'
     ],
     assets: [
       'vendor/select2/select2.png'

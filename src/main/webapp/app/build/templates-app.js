@@ -376,25 +376,25 @@ angular.module("customer/manage-customer.tpl.html", []).run(["$templateCache", f
     "        <div class=\"form-group form-group-lg\">\n" +
     "            <label class=\"col-sm-2 control-label\" for=\"contactName\">Contact Name:</label>\n" +
     "            <div class=\"col-sm-4\">\n" +
-    "                <input id=\"contactName\" type=\"text\" ng-model=\"customer.contactName\" class=\"form-control\" placeholder=\"Enter Company Contact Name\"/>\n" +
+    "                <input id=\"contactName\" type=\"text\" ng-model=\"customer.contactName\" placeholder=\"Enter Company Contact Name\" class=\"form-control\" />\n" +
     "            </div>\n" +
     "        </div>\n" +
     "        <div class=\"form-group form-group-lg\">\n" +
     "            <label class=\"col-sm-2 control-label\" for=\"companyName\">Company Name:</label>\n" +
     "            <div class=\"col-sm-4\">\n" +
-    "                <input id=\"companyName\" type=\"text\" ng-model=\"customer.companyName\" class=\"form-control\" placeholder=\"Enter Company Name\"/>\n" +
+    "                <input id=\"companyName\" type=\"text\" ng-model=\"customer.companyName\" placeholder=\"Enter Company Name\" class=\"form-control\" />\n" +
     "            </div>\n" +
     "        </div>\n" +
     "        <div class=\"form-group form-group-lg\">\n" +
     "            <label class=\"col-sm-2 control-label\" for=\"addressStreet1\">Address 1:</label>\n" +
     "            <div class=\"col-sm-4\">\n" +
-    "                <input id=\"addressStreet1\" type=\"text\" ng-model=\"customer.addressStreet1\" class=\"form-control\" placeholder=\"Enter Street Address\"/>\n" +
+    "                <input id=\"addressStreet1\" type=\"text\" ng-model=\"customer.addressStreet1\" placeholder=\"Enter Street Address\" class=\"form-control\"/>\n" +
     "            </div>\n" +
     "        </div>\n" +
     "        <div class=\"form-group form-group-lg\">\n" +
     "            <label class=\"col-sm-2 control-label\" for=\"addressStreet2\">Address 2:</label>\n" +
     "            <div class=\"col-sm-4\">\n" +
-    "                <input id=\"addressStreet2\" type=\"text\" ng-model=\"customer.addressStreet2\" class=\"form-control\" placeholder=\"Optional Additional Street Address\"/>\n" +
+    "                <input id=\"addressStreet2\" type=\"text\" ng-model=\"customer.addressStreet2\" placeholder=\"Optional Additional Street Address\" class=\"form-control\" />\n" +
     "            </div>\n" +
     "        </div>\n" +
     "        <div class=\"form-group form-group-lg\">\n" +
@@ -406,7 +406,7 @@ angular.module("customer/manage-customer.tpl.html", []).run(["$templateCache", f
     "        <div class=\"form-group form-group-lg\">\n" +
     "            <label class=\"col-sm-2 control-label\" for=\"state\">State:</label>\n" +
     "            <div class=\"col-sm-4\">\n" +
-    "                <select kendo-combo-box id=\"state\" ng-model=\"customer.state\" data-placeholder=\"Choose State\" class=\"form-control\">\n" +
+    "                <select kendo-combo-box id=\"state\" ng-model=\"customer.state\" data-placeholder=\"'Choose State'\" class=\"form-control\">\n" +
     "                    <option value=\"\"></option>\n" +
     "                    <option ng-repeat=\"state in states\" value=\"{{state.value}}\">{{state.display}}</option>\n" +
     "                </select>\n" +
@@ -415,19 +415,19 @@ angular.module("customer/manage-customer.tpl.html", []).run(["$templateCache", f
     "        <div class=\"form-group form-group-lg\">\n" +
     "            <label class=\"col-sm-2 control-label\" for=\"zip\">Zip:</label>\n" +
     "            <div class=\"col-sm-4\">\n" +
-    "                <input id=\"zip\" kendo-masked-text-box ng-model=\"customer.zip\" class=\"form-control\" k-mask=\"'99999-0000'\" k-prompt-char=\"' '\"/>\n" +
+    "                <input id=\"zip\" kendo-masked-text-box raw-mask=\"customer.zip\" k-mask=\"'99999-0000'\" k-prompt-char=\"' '\" class=\"form-control\"/>\n" +
     "            </div>\n" +
     "        </div>\n" +
     "        <div class=\"form-group form-group-lg\">\n" +
     "            <label class=\"col-sm-2 control-label\" for=\"phone1\">Phone 1:</label>\n" +
     "            <div class=\"col-sm-4\">\n" +
-    "                <input id=\"phone1\" kendo-masked-text-box ng-model=\"customer.phone1\" class=\"form-control\" k-mask=\"'(999) 000-0000'\" k-prompt-char=\"' '\"/>\n" +
+    "                <input id=\"phone1\" kendo-masked-text-box raw-mask=\"customer.phone1\" k-mask=\"'(999) 000-0000'\" k-prompt-char=\"' '\" class=\"form-control\" />\n" +
     "            </div>\n" +
     "        </div>\n" +
     "        <div class=\"form-group form-group-lg\">\n" +
     "            <label class=\"col-sm-2 control-label\" for=\"phone2\">Phone 2:</label>\n" +
     "            <div class=\"col-sm-4\">\n" +
-    "                <input id=\"phone2\" kendo-masked-text-box ng-model=\"customer.phone2\" class=\"form-control\" k-mask=\"'(999) 000-0000'\"/>\n" +
+    "                <input id=\"phone2\" kendo-masked-text-box raw-mask=\"customer.phone2\" k-mask=\"'(999) 000-0000'\" k-prompt-char=\"' '\" class=\"form-control\"/>\n" +
     "            </div>\n" +
     "        </div>\n" +
     "        <div class=\"form-group form-group-lg\" ng-class=\"{ 'has-error': customerForm.email.$invalid }\">\n" +
@@ -599,6 +599,13 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
 
 angular.module("proposal/manage-proposal.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("proposal/manage-proposal.tpl.html",
+    "<style>\n" +
+    "    .form-control.k-widget\n" +
+    "    {\n" +
+    "        padding: 0;\n" +
+    "        width: 100%;\n" +
+    "    }\n" +
+    "</style>\n" +
     "<div class=\"row\">\n" +
     "    <h1 class=\"page-header\">\n" +
     "        Proposal Session\n" +
@@ -652,7 +659,7 @@ angular.module("proposal/manage-proposal.tpl.html", []).run(["$templateCache", f
     "                    <div class=\"form-group form-group-lg\">\n" +
     "                        <label class=\"col-sm-2 control-label\" for=\"contactName\">Contact Name:</label>\n" +
     "                        <div class=\"col-sm-4\">\n" +
-    "                            <input id=\"contactName\" type=\"text\" ng-model=\"proposalSession.customerGoal.contactName\" class=\"form-control\" />\n" +
+    "                            <input id=\"contactName\" type=\"text\" ng-model=\"proposalSession.customerGoal.contactName\" class=\"form-control\" ng-disabled=\"true\" />\n" +
     "                        </div>\n" +
     "                    </div>\n" +
     "                    <div class=\"form-group form-group-lg\">\n" +
@@ -660,13 +667,8 @@ angular.module("proposal/manage-proposal.tpl.html", []).run(["$templateCache", f
     "                        <div class=\"col-sm-4\">\n" +
     "                            <input kendo-auto-complete id=\"companyName\"\n" +
     "                                   ng-model=\"proposalSession.customerGoal.companyName\"\n" +
-    "                                   k-options=\"customerAutoComplete\" class=\"form-control\"/>\n" +
+    "                                   k-options=\"customerAutoComplete\" class=\"form-control\" />\n" +
     "                        </div>\n" +
-    "<!--\n" +
-    "                        <div class=\"col-sm-4\">\n" +
-    "                            <input id=\"companyName\" type=\"text\" ng-model=\"proposalSession.customerGoal.companyName\" class=\"form-control\"/>\n" +
-    "                        </div>\n" +
-    "-->\n" +
     "                    </div>\n" +
     "                    <div class=\"form-group form-group-lg\">\n" +
     "                        <label class=\"col-sm-2 control-label\" for=\"currentValuation\">Current Valuation:</label>\n" +

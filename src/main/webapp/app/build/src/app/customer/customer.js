@@ -24,23 +24,25 @@ angular.module('ngBoilerplate.customer', [
         return Customer.save({}, customer).$promise;
     };
 
-    service.getAllCustomers = function(options) {
+    service.getAllCustomers = function() {
         var Customer = $resource("/jpm-lead-gen/rest/customers");
-        return Customer.get().$promise.then(function(data) {
-            options.success(data.customers);
-        });
+        return Customer.get().$promise;
     };
 
     service.getCustomersLike = function(companyName) {
         var Customer = $resource("/jpm-lead-gen/rest/customers?paramCompanyName=:paramCompanyName");
-        return Customer.get({paramCompanyName: companyName}).$promise.then(function(data) {
-            return data.customers;
-        });
+        return Customer.get({paramCompanyName: companyName}).$promise;
     };
 
     return service;
 })
 .controller("ManageCustomerCtrl", function($scope, customerService, $state, growl) {
+    $scope.customer = {
+        zip: '',
+        phone1: '',
+        phone2: ''
+    };
+
     $scope.createCustomer = function() {
         customerService.createCustomer($scope.customer).then(
             function(data) {
@@ -110,4 +112,34 @@ angular.module('ngBoilerplate.customer', [
         { 'value': 'WI', 'display': 'Wisconsin' },
         { 'value': 'WY', 'display': 'Wyoming' }
     ];
-});
+})
+.directive('rawMask', function($parse) {
+    function link(scope, element, attrs) {
+        var field = attrs.rawMask;
+
+        setTimeout(function() {
+            var widget = element.data("kendoMaskedTextBox");
+            var widgetValue = scope.$eval(field);
+
+            widget.value(widgetValue);
+            widget.bind("change", function() {
+                scope.$apply(function() {
+                    var model = $parse(field);
+                    model.assign(scope, widget.raw());
+                });
+            });
+
+            scope.$watch(field, function(newValue, oldValue) {
+                if (newValue !== oldValue) {
+                    widget.value(newValue);
+                }
+            });
+        }, 10);
+    }
+
+    return {
+        restrict: 'A',
+        link: link
+    };
+})
+;

@@ -1,3 +1,10 @@
+<style>
+    .form-control.k-widget
+    {
+        padding: 0;
+        width: 100%;
+    }
+</style>
 <div class="row">
     <h1 class="page-header">
         Proposal Session
@@ -51,7 +58,7 @@
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" for="contactName">Contact Name:</label>
                         <div class="col-sm-4">
-                            <input id="contactName" type="text" ng-model="proposalSession.customerGoal.contactName" class="form-control" />
+                            <input id="contactName" type="text" ng-model="proposalSession.customerGoal.contactName" class="form-control" ng-disabled="true" />
                         </div>
                     </div>
                     <div class="form-group form-group-lg">
@@ -59,13 +66,8 @@
                         <div class="col-sm-4">
                             <input kendo-auto-complete id="companyName"
                                    ng-model="proposalSession.customerGoal.companyName"
-                                   k-options="customerAutoComplete" class="form-control"/>
+                                   k-options="customerAutoComplete" class="form-control" />
                         </div>
-<!--
-                        <div class="col-sm-4">
-                            <input id="companyName" type="text" ng-model="proposalSession.customerGoal.companyName" class="form-control"/>
-                        </div>
--->
                     </div>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" for="currentValuation">Current Valuation:</label>
