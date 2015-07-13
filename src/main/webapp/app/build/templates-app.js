@@ -1,4 +1,4 @@
-angular.module('templates-app', ['about/about.tpl.html', 'account/login.tpl.html', 'account/register.tpl.html', 'account/search.tpl.html', 'blog/manage-blogs.tpl.html', 'customer/manage-customer.tpl.html', 'home/home.tpl.html', 'proposal/manage-proposal.tpl.html']);
+angular.module('templates-app', ['about/about.tpl.html', 'account/login.tpl.html', 'account/register.tpl.html', 'account/search.tpl.html', 'blog/manage-blogs.tpl.html', 'customer/manage-customer.tpl.html', 'home/home.tpl.html', 'proposal/advanced-debt-calc.tpl.html', 'proposal/assumed-sales-calc.tpl.html', 'proposal/commission-calc.tpl.html', 'proposal/customer-goal.tpl.html', 'proposal/jpm-model.tpl.html', 'proposal/manage-proposal.tpl.html', 'proposal/proposal-output.tpl.html', 'proposal/recruiting-effort-calc.tpl.html']);
 
 angular.module("about/about.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("about/about.tpl.html",
@@ -597,146 +597,143 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "");
 }]);
 
+angular.module("proposal/advanced-debt-calc.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("proposal/advanced-debt-calc.tpl.html",
+    "<h1 class=\"page-header\">Advanced to Debt Ratio Calculator</h1>\n" +
+    "");
+}]);
+
+angular.module("proposal/assumed-sales-calc.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("proposal/assumed-sales-calc.tpl.html",
+    "<h1 class=\"page-header\">Assumed Sales Caculator</h1>\n" +
+    "");
+}]);
+
+angular.module("proposal/commission-calc.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("proposal/commission-calc.tpl.html",
+    "<h1 class=\"page-header\">Commission Calculator</h1>\n" +
+    "");
+}]);
+
+angular.module("proposal/customer-goal.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("proposal/customer-goal.tpl.html",
+    "<h1 class=\"page-header\">Customer Goals</h1>\n" +
+    "\n" +
+    "<form name=\"proposalSessionForm\" ng-submit=\"createProposalSession()\" class=\"form-horizontal\">\n" +
+    "    <div class=\"form-group form-group-lg\">\n" +
+    "        <label class=\"col-sm-2 control-label\" for=\"contactName\">Contact Name:</label>\n" +
+    "        <div class=\"col-sm-4\">\n" +
+    "            <input id=\"contactName\" type=\"text\" ng-model=\"proposalSession.customerGoal.contactName\" ng-disabled=\"true\" class=\"form-control\" />\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"form-group form-group-lg\">\n" +
+    "        <label class=\"col-sm-2 control-label\" for=\"companyName\">Company Name:</label>\n" +
+    "        <div class=\"col-sm-4\">\n" +
+    "            <input kendo-auto-complete id=\"companyName\"\n" +
+    "                   ng-model=\"proposalSession.customerGoal.companyName\"\n" +
+    "                   k-options=\"customerAutoComplete\" class=\"form-control\" />\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"form-group form-group-lg\">\n" +
+    "        <label class=\"col-sm-2 control-label\" for=\"currentValuation\">Current Valuation:</label>\n" +
+    "        <div class=\"col-sm-4\">\n" +
+    "            <input kendo-numeric-text-box id=\"currentValuation\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.currentValuation\" style=\"width: 100%; height: 100%;\" />\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"form-group form-group-lg\">\n" +
+    "        <label class=\"col-sm-5 control-label\"><h4>Annual Revenue Goals</h4></label>\n" +
+    "    </div>\n" +
+    "    <div class=\"form-group form-group-lg\">\n" +
+    "        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear1\">Year 1:</label>\n" +
+    "        <div class=\"col-sm-4\">\n" +
+    "            <input kendo-numeric-text-box id=\"revenueGoalYear1\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.revenueGoalYear1\" style=\"width: 100%; height: 100%;\" />\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"form-group form-group-lg\">\n" +
+    "        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear2\">Year 2:</label>\n" +
+    "        <div class=\"col-sm-4\">\n" +
+    "            <input kendo-numeric-text-box id=\"revenueGoalYear2\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.revenueGoalYear2\" style=\"width: 100%; height: 100%;\" />\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"form-group form-group-lg\">\n" +
+    "        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear3\">Year 3:</label>\n" +
+    "        <div class=\"col-sm-4\">\n" +
+    "            <input kendo-numeric-text-box id=\"revenueGoalYear3\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.revenueGoalYear3\" style=\"width: 100%; height: 100%;\" />\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"form-group form-group-lg\">\n" +
+    "        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear4\">Year 4:</label>\n" +
+    "        <div class=\"col-sm-4\">\n" +
+    "            <input kendo-numeric-text-box id=\"revenueGoalYear4\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.revenueGoalYear4\" style=\"width: 100%; height: 100%;\" />\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"form-group form-group-lg\">\n" +
+    "        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear5\">Year 5:</label>\n" +
+    "        <div class=\"col-sm-4\">\n" +
+    "            <input kendo-numeric-text-box id=\"revenueGoalYear5\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.revenueGoalYear5\" style=\"width: 100%; height: 100%;\" />\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"form-group form-group-lg\">\n" +
+    "        <label class=\"col-sm-2 control-label\" for=\"upfrontFees\">Upfront Fees:</label>\n" +
+    "        <div class=\"col-sm-4\">\n" +
+    "            <input kendo-numeric-text-box id=\"upfrontFees\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.upfrontFees\" style=\"width: 100%; height: 100%;\" />\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"form-group form-group-lg\">\n" +
+    "        <label class=\"col-sm-2 control-label\" for=\"upfrontFees\">Lag Time:</label>\n" +
+    "        <div class=\"col-sm-4\">\n" +
+    "            <input kendo-numeric-text-box id=\"lagTime\" k-options=\"lagTimeTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.lagTime\" style=\"width: 100%; height: 100%;\" />\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</form>\n" +
+    "");
+}]);
+
+angular.module("proposal/jpm-model.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("proposal/jpm-model.tpl.html",
+    "<h1 class=\"page-header\">JPM Model</h1>\n" +
+    "");
+}]);
+
 angular.module("proposal/manage-proposal.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("proposal/manage-proposal.tpl.html",
     "<div class=\"row\">\n" +
     "    <h1 class=\"page-header\">\n" +
     "        Proposal Session\n" +
     "    </h1>\n" +
-    "    <form name=\"proposalForm\" class=\"form-horizontal\">\n" +
-    "        <!-- Nav tabs -->\n" +
-    "        <ul class=\"nav nav-tabs\">\n" +
-    "            <li role=\"presentation\" class=\"active\">\n" +
-    "                <a href=\"\" ui-sref=\"customerGoal\" role=\"tab\" data-toggle=\"tab\">\n" +
-    "                    <i class=\"fa fa-soccer-ball-o\"></i> Customer Goal\n" +
-    "                </a>\n" +
-    "            </li>\n" +
-    "            <li role=\"presentation\">\n" +
-    "                <a href=\"\" ui-sref=\"jpmModel\" role=\"tab\" data-toggle=\"tab\">\n" +
-    "                    <i class=\"fa fa-pencil-square\"></i> JPM Model\n" +
-    "                </a>\n" +
-    "            </li>\n" +
-    "            <li role=\"presentation\">\n" +
-    "                <a href=\"\" ui-sref=\"assumedSalesCalc\" role=\"tab\" data-toggle=\"tab\">\n" +
-    "                    <i class=\"fa fa-calculator\"></i> Assumed Sales Calc\n" +
-    "                </a>\n" +
-    "            </li>\n" +
-    "            <li role=\"presentation\">\n" +
-    "                <a href=\"\" ui-sref=\"commissionCalc\" role=\"tab\" data-toggle=\"tab\">\n" +
-    "                    <i class=\"fa fa-calculator\"></i> Commission Calc\n" +
-    "                </a>\n" +
-    "            </li>\n" +
-    "            <li role=\"presentation\">\n" +
-    "                <a href=\"\" ui-sref=\"recruitingEffortCalc\" role=\"tab\" data-toggle=\"tab\">\n" +
-    "                    <i class=\"fa fa-calculator\"></i> Recruiting Effort Calc\n" +
-    "                </a>\n" +
-    "            </li>\n" +
-    "            <li role=\"presentation\">\n" +
-    "                <a href=\"\" ui-sref=\"advancedDebtCalc\" role=\"tab\" data-toggle=\"tab\">\n" +
-    "                    <i class=\"fa fa-calculator\"></i> Advanced:Debt Calc\n" +
-    "                </a>\n" +
-    "            </li>\n" +
-    "            <li role=\"presentation\">\n" +
-    "                <a href=\"\" ui-sref=\"proposalOutput\" role=\"tab\" data-toggle=\"tab\">\n" +
-    "                    <i class=\"fa fa-newspaper-o\"></i> Proposal\n" +
-    "                </a>\n" +
-    "            </li>\n" +
+    "    <div kendo-tab-strip>\n" +
+    "        <ul>\n" +
+    "            <li class=\"k-state-active\"><i class=\"fa fa-soccer-ball-o\"></i> Customer Goal</li>\n" +
+    "            <li><i class=\"fa fa-pencil-square\"></i> JPM Model</li>\n" +
+    "            <li><i class=\"fa fa-calculator\"></i> Assumed Sales Calc</li>\n" +
+    "            <li><i class=\"fa fa-calculator\"></i> Commission Calc</li>\n" +
+    "            <li><i class=\"fa fa-calculator\"></i> Recruiting Effort Calc</li>\n" +
+    "            <li><i class=\"fa fa-calculator\"></i> Advanced:Debt Calc</li>\n" +
+    "            <li><i class=\"fa fa-newspaper-o\"></i> Proposal</li>\n" +
     "        </ul>\n" +
     "\n" +
     "        <!-- Tab panes -->\n" +
-    "        <div class=\"tab-content\">\n" +
-    "            <div role=\"tabpanel\" class=\"tab-pane active\" id=\"customerGoal\">\n" +
-    "                <h1 class=\"page-header\">Customer Goals</h1>\n" +
-    "\n" +
-    "                <form name=\"proposalSessionForm\" ng-submit=\"createProposalSession()\" class=\"form-horizontal\">\n" +
-    "                    <div class=\"form-group form-group-lg\">\n" +
-    "                        <label class=\"col-sm-2 control-label\" for=\"contactName\">Contact Name:</label>\n" +
-    "                        <div class=\"col-sm-4\">\n" +
-    "                            <input id=\"contactName\" type=\"text\" ng-model=\"proposalSession.customerGoal.contactName\" ng-disabled=\"true\" class=\"form-control\" />\n" +
-    "                        </div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"form-group form-group-lg\">\n" +
-    "                        <label class=\"col-sm-2 control-label\" for=\"companyName\">Company Name:</label>\n" +
-    "                        <div class=\"col-sm-4\">\n" +
-    "                            <input kendo-auto-complete id=\"companyName\"\n" +
-    "                                   ng-model=\"proposalSession.customerGoal.companyName\"\n" +
-    "                                   k-options=\"customerAutoComplete\" class=\"form-control\" />\n" +
-    "                        </div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"form-group form-group-lg\">\n" +
-    "                        <label class=\"col-sm-2 control-label\" for=\"currentValuation\">Current Valuation:</label>\n" +
-    "                        <div class=\"col-sm-4\">\n" +
-    "                            <input kendo-numeric-text-box id=\"currentValuation\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.currentValuation\" style=\"width: 100%; height: 100%;\" />\n" +
-    "                        </div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"form-group form-group-lg\">\n" +
-    "                        <label class=\"col-sm-5 control-label\"><h4>Annual Revenue Goals</h4></label>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"form-group form-group-lg\">\n" +
-    "                        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear1\">Year 1:</label>\n" +
-    "                        <div class=\"col-sm-4\">\n" +
-    "                            <input kendo-numeric-text-box id=\"revenueGoalYear1\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.revenueGoalYear1\" style=\"width: 100%; height: 100%;\" />\n" +
-    "                        </div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"form-group form-group-lg\">\n" +
-    "                        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear2\">Year 2:</label>\n" +
-    "                        <div class=\"col-sm-4\">\n" +
-    "                            <input kendo-numeric-text-box id=\"revenueGoalYear2\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.revenueGoalYear2\" style=\"width: 100%; height: 100%;\" />\n" +
-    "                        </div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"form-group form-group-lg\">\n" +
-    "                        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear3\">Year 3:</label>\n" +
-    "                        <div class=\"col-sm-4\">\n" +
-    "                            <input kendo-numeric-text-box id=\"revenueGoalYear3\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.revenueGoalYear3\" style=\"width: 100%; height: 100%;\" />\n" +
-    "                        </div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"form-group form-group-lg\">\n" +
-    "                        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear4\">Year 4:</label>\n" +
-    "                        <div class=\"col-sm-4\">\n" +
-    "                            <input kendo-numeric-text-box id=\"revenueGoalYear4\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.revenueGoalYear4\" style=\"width: 100%; height: 100%;\" />\n" +
-    "                        </div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"form-group form-group-lg\">\n" +
-    "                        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear5\">Year 5:</label>\n" +
-    "                        <div class=\"col-sm-4\">\n" +
-    "                            <input kendo-numeric-text-box id=\"revenueGoalYear5\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.revenueGoalYear5\" style=\"width: 100%; height: 100%;\" />\n" +
-    "                        </div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"form-group form-group-lg\">\n" +
-    "                        <label class=\"col-sm-2 control-label\" for=\"upfrontFees\">Upfront Fees:</label>\n" +
-    "                        <div class=\"col-sm-4\">\n" +
-    "                            <input kendo-numeric-text-box id=\"upfrontFees\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.upfrontFees\" style=\"width: 100%; height: 100%;\" />\n" +
-    "                        </div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"form-group form-group-lg\">\n" +
-    "                        <label class=\"col-sm-2 control-label\" for=\"upfrontFees\">Lag Time:</label>\n" +
-    "                        <div class=\"col-sm-4\">\n" +
-    "                            <input kendo-numeric-text-box id=\"lagTime\" k-options=\"lagTimeTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.lagTime\" style=\"width: 100%; height: 100%;\" />\n" +
-    "                        </div>\n" +
-    "                    </div>\n" +
-    "                </form>\n" +
-    "            </div>\n" +
-    "            <div role=\"tabpanel\" class=\"tab-pane\" id=\"jpmModel\">\n" +
-    "                JPM Model\n" +
-    "            </div>\n" +
-    "            <div role=\"tabpanel\" class=\"tab-pane\" id=\"assumedSalesCalc\">\n" +
-    "                Assumed Sales Caculator\n" +
-    "            </div>\n" +
-    "            <div role=\"tabpanel\" class=\"tab-pane\" id=\"commissionCalc\">\n" +
-    "                Commission Calculator\n" +
-    "            </div>\n" +
-    "            <div role=\"tabpanel\" class=\"tab-pane\" id=\"recruitingEffortCalc\">\n" +
-    "                Recruiting Effort Calculator\n" +
-    "            </div>\n" +
-    "            <div role=\"tabpanel\" class=\"tab-pane\" id=\"advancedDebtCalc\">\n" +
-    "                Advanced to Debt Ratio Calculator\n" +
-    "            </div>\n" +
-    "            <div role=\"tabpanel\" class=\"tab-pane\" id=\"proposalOutput\">\n" +
-    "                Proposal Output\n" +
-    "            </div>\n" +
-    "        </div>\n" +
-    "    </form>\n" +
+    "        <div customer-goal></div>\n" +
+    "        <div jpm-model></div>\n" +
+    "        <div assumed-sales-calc></div>\n" +
+    "        <div commission-calc></div>\n" +
+    "        <div recruiting-effort-calc></div>\n" +
+    "        <div advanced-debt-calc></div>\n" +
+    "        <div proposal-output></div>\n" +
+    "    </div>\n" +
     "</div>\n" +
     "\n" +
+    "");
+}]);
+
+angular.module("proposal/proposal-output.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("proposal/proposal-output.tpl.html",
+    "<h1 class=\"page-header\">Proposal Output</h1>\n" +
+    "");
+}]);
+
+angular.module("proposal/recruiting-effort-calc.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("proposal/recruiting-effort-calc.tpl.html",
+    "<h1 class=\"page-header\">Recruiting Effort Calculator</h1>\n" +
     "");
 }]);

@@ -25,14 +25,14 @@ angular.module('ngBoilerplate.proposal', [
     $scope.kendoNumericTextBoxOptions = {
         min: "0",
         max: "100000000",
-        format: "#",
+        format: "c2",
         spinners: false
     };
 
     $scope.lagTimeTextBoxOptions = {
         min: "0",
         max: "12",
-        format: "c2"
+        format: "#"
     };
 
     $scope.customerAutoComplete = {
@@ -57,4 +57,48 @@ angular.module('ngBoilerplate.proposal', [
             $scope.proposalSession.customerGoal.contactName = dataItem.contactName;
         }
     };
-});
+})
+.directive('customerGoal', function() {
+    return {
+        restrict: 'A',
+        transclude: false,
+        templateUrl: 'proposal/customer-goal.tpl.html'
+    };
+})
+.directive('jpmModel', function() {
+    return {
+        restrict: 'A',
+        templateUrl: 'proposal/jpm-model.tpl.html'
+    };
+})
+.directive('assumedSalesCalc', function() {
+    return {
+        restrict: 'A',
+        templateUrl: 'proposal/assumed-sales-calc.tpl.html'
+    };
+})
+.directive('commissionCalc', function() {
+    return {
+        restrict: 'A',
+        templateUrl: 'proposal/commission-calc.tpl.html'
+    };
+})
+.directive('recruitingEffortCalc', function() {
+    return {
+        restrict: 'A',
+        templateUrl: 'proposal/recruiting-effort-calc.tpl.html'
+    };
+})
+.directive('advancedDebtCalc', function() {
+    return {
+        restrict: 'A',
+        templateUrl: 'proposal/advanced-debt-calc.tpl.html'
+    };
+})
+.directive('proposalOutput', function() {
+    return {
+        restrict: 'A',
+        templateUrl: 'proposal/proposal-output.tpl.html'
+    };
+})
+;

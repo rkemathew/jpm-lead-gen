@@ -2,94 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6f2d5d2-81a2-4a71-acb5-ac6bf3e39cee" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\build\assets\select2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\build\vendor\angular-ui-select2\src\select2.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\build\vendor\select2\select2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\angular-ui-select2\.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\angular-ui-select2\.bowerrc" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\angular-ui-select2\.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\angular-ui-select2\.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\angular-ui-select2\.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\angular-ui-select2\CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\angular-ui-select2\Gruntfile.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\angular-ui-select2\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\angular-ui-select2\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\angular-ui-select2\bower.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\angular-ui-select2\docs\index.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\angular-ui-select2\docs\styles.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\angular-ui-select2\package.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\angular-ui-select2\src\select2.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\angular-ui-select2\test\karma.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\angular-ui-select2\test\select2Spec.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\bower.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\component.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\composer.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\package.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\release.sh" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2-bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2-spinner.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2.jquery.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_ar.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_bg.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_ca.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_cs.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_da.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_de.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_el.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_en.js.template" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_es.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_et.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_eu.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_fa.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_fi.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_fr.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_gl.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_he.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_hr.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_hu.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_id.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_is.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_it.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_ja.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_ka.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_ko.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_lt.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_lv.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_mk.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_ms.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_nl.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_no.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_pl.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_pt-BR.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_pt-PT.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_ro.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_rs.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_ru.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_sk.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_sv.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_th.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_tr.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_uk.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_vi.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_zh-CN.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2_locale_zh-TW.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rmathew\MyProjects\jpm-lead-gen\src\main\webapp\app\vendor\select2\select2x2.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/app/build/src/app/app.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/build/src/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/app/src/app/app.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/src/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/app/bower.json" afterPath="$PROJECT_DIR$/src/main/webapp/app/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/app/build.config.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/build.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/app/build/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/app/build/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/app/build/karma-unit.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/build/karma-unit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/advanced-debt-calc.tpl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/assumed-sales-calc.tpl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/commission-calc.tpl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/customer-goal.tpl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/jpm-model.tpl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/proposal-output.tpl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/recruiting-effort-calc.tpl.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/manage-proposal.tpl.html" afterPath="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/manage-proposal.tpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/app/build/assets/ngbp-0.3.2.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/build/assets/ngbp-0.3.2.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/proposal.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/proposal.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/app/build/templates-app.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/build/templates-app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -117,41 +37,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="manage-proposal.tpl.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/manage-proposal.tpl.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20826952" vertical-offset="0" max-vertical-offset="2465">
-              <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#6;n#form#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#7;n#form#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#8;n#form#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#9;n#form#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#10;n#form#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="proposal.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="proposal.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/proposal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.982659" vertical-offset="0" max-vertical-offset="1853">
+              <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/app/build.config.js">
+      <file leaf-file-name="manage-proposal.tpl.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/manage-proposal.tpl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="651" max-vertical-offset="1615">
-              <caret line="81" column="67" selection-start-line="81" selection-start-column="67" selection-end-line="81" selection-end-column="67" />
+            <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="544">
+              <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customer-goal.tpl.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/customer-goal.tpl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="1275">
+              <caret line="20" column="102" selection-start-line="20" selection-start-column="102" selection-end-line="20" selection-end-column="102" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#5;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#6;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#7;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#8;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#9;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#10;n#form#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -171,13 +91,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/app/src/app/account/account.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/webapp/app/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/webapp/app/package.json" />
-        <option value="$PROJECT_DIR$/src/main/webapp/app/Gruntfile.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jpm/leadgen/rest/mvc/GlobalControllerExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jpm/leadgen/rest/resources/asm/ErrorResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jpm/leadgen/core/models/entities/RestError.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jpm/leadgen/rest/resources/RestErrorResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jpm/leadgen/rest/resources/asm/RestErrorResourceAsm.java" />
@@ -220,8 +133,15 @@
         <option value="$PROJECT_DIR$/src/main/webapp/app/src/app/app.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/app/bower.json" />
         <option value="$PROJECT_DIR$/src/main/webapp/app/build.config.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/proposal.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/jpm-model.tpl.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/assumed-sales-calc.tpl.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/commission-calc.tpl.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/recruiting-effort-calc.tpl.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/advanced-debt-calc.tpl.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/proposal-output.tpl.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/manage-proposal.tpl.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/proposal.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/customer-goal.tpl.html" />
       </list>
     </option>
   </component>
@@ -1486,7 +1406,13 @@
       <option name="project" value="LOCAL" />
       <updated>1436564338661</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added the code to handle the ReST errors in a global manner.">
+      <created>1436810033898</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1436810033898</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1506,7 +1432,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19553073" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960895" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20476772" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20476772" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1553,60 +1479,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jpm/leadgen/core/services/exceptions/AccountExistsException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1233672" vertical-offset="0" max-vertical-offset="689">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/tools/Java/jdk1.8.0_45/src.zip!/java/lang/Throwable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5704" max-vertical-offset="17629">
-          <caret line="375" column="18" selection-start-line="375" selection-start-column="18" selection-end-line="375" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jpm/leadgen/rest/resources/AccountListResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34542817" vertical-offset="0" max-vertical-offset="689">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jpm/leadgen/rest/exceptions/ConflictException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29608127" vertical-offset="0" max-vertical-offset="689">
-          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
-          <folding>
-            <element signature="e#406#407#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/src/app/customer/customer.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05120482" vertical-offset="0" max-vertical-offset="664">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/jpm/leadgen/mvc/AccountControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="4556">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/jpm/leadgen/mvc/CustomerControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5712" vertical-offset="255" max-vertical-offset="1122">
-          <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jpm/leadgen/rest/resources/BlogEntryListResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3808" vertical-offset="0" max-vertical-offset="625">
@@ -1958,28 +1830,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/proposal.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/assumed-sales-calc.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
+          <caret line="0" column="47" selection-start-line="0" selection-start-column="47" selection-end-line="0" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/commission-calc.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
+          <caret line="0" column="45" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/recruiting-effort-calc.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
+          <caret line="0" column="52" selection-start-line="0" selection-start-column="52" selection-end-line="0" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/advanced-debt-calc.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
+          <caret line="0" column="57" selection-start-line="0" selection-start-column="57" selection-end-line="0" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/proposal-output.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
+          <caret line="0" column="39" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/jpm-model.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.025525525" vertical-offset="0" max-vertical-offset="666">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/manage-proposal.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20826952" vertical-offset="0" max-vertical-offset="2465">
-          <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
+        <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="544">
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/customer-goal.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="1275">
+          <caret line="20" column="102" selection-start-line="20" selection-start-column="102" selection-end-line="20" selection-end-column="102" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#6;n#form#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#7;n#form#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#8;n#form#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#9;n#form#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#10;n#form#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#5;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#6;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#7;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#8;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#9;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#10;n#form#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/src/app/proposal/proposal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.982659" vertical-offset="0" max-vertical-offset="1853">
+          <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
