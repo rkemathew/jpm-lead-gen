@@ -9,7 +9,6 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.proposal',
   'ui.router',
   'ui.utils',
-  'ui.select2',
   'angular-growl',
   'hateoas'
 ])

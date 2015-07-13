@@ -71,21 +71,19 @@ module.exports = {
       'vendor/angular-resource/angular-resource.min.js',
       'vendor/angular-base64/angular-base64.min.js',
       'vendor/angular-hateoas/src/angular-hateoas.js',
-      'vendor/select2/select2.min.js',
-      'vendor/angular-ui-select2/src/select2.js',
       'vendor/angular-growl-v2/build/angular-growl.js',
       'vendor/angular-input-masks/angular-input-masks-standalone.min.js',
-      'vendor/kendo-ui-core/js/kendo.ui.core.min.js'
+      'vendor/kendo-ui-core/js/kendo.ui.core.min.js',
+      'vendor/kendo-ui-core/js/kendo.angular.min.js'
     ],
     css: [
-      'vendor/select2/select2.css',
       'vendor/angular-growl-v2/build/angular-growl.css',
       'vendor/kendo-ui-core/styles/kendo.common-bootstrap.core.min.css',
       'vendor/kendo-ui-core/styles/kendo.common-bootstrap.min.css',
-      'vendor/kendo-ui-core/styles/kendo.bootstrap.min.css'
+      'vendor/kendo-ui-core/styles/kendo.default.min.css'
     ],
     assets: [
-      'vendor/select2/select2.png'
+      'vendor/kendo-ui-core/styles/Default/*'
     ]
   },
 };

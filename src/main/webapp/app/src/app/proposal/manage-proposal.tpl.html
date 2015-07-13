@@ -1,10 +1,3 @@
-<style>
-    .form-control.k-widget
-    {
-        padding: 0;
-        width: 100%;
-    }
-</style>
 <div class="row">
     <h1 class="page-header">
         Proposal Session
@@ -58,7 +51,7 @@
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" for="contactName">Contact Name:</label>
                         <div class="col-sm-4">
-                            <input id="contactName" type="text" ng-model="proposalSession.customerGoal.contactName" class="form-control" ng-disabled="true" />
+                            <input id="contactName" type="text" ng-model="proposalSession.customerGoal.contactName" ng-disabled="true" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group form-group-lg">
@@ -72,7 +65,7 @@
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" for="currentValuation">Current Valuation:</label>
                         <div class="col-sm-4">
-                            <input id="currentValuation" type="text" ng-model="proposalSession.customerGoal.currentValuation" class="form-control" ui-money-mask/>
+                            <input kendo-numeric-text-box id="currentValuation" k-options="kendoNumericTextBoxOptions" k-ng-model="proposalSession.customerGoal.currentValuation" style="width: 100%; height: 100%;" />
                         </div>
                     </div>
                     <div class="form-group form-group-lg">
@@ -81,43 +74,43 @@
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" for="revenueGoalYear1">Year 1:</label>
                         <div class="col-sm-4">
-                            <input id="revenueGoalYear1" type="text" ng-model="proposalSession.customerGoal.revenueGoalYear1" class="form-control" ui-money-mask/>
+                            <input kendo-numeric-text-box id="revenueGoalYear1" k-options="kendoNumericTextBoxOptions" k-ng-model="proposalSession.customerGoal.revenueGoalYear1" style="width: 100%; height: 100%;" />
                         </div>
                     </div>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" for="revenueGoalYear2">Year 2:</label>
                         <div class="col-sm-4">
-                            <input id="revenueGoalYear2" type="text" ng-model="proposalSession.customerGoal.revenueGoalYear2" class="form-control" ui-money-mask/>
+                            <input kendo-numeric-text-box id="revenueGoalYear2" k-options="kendoNumericTextBoxOptions" k-ng-model="proposalSession.customerGoal.revenueGoalYear2" style="width: 100%; height: 100%;" />
                         </div>
                     </div>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" for="revenueGoalYear3">Year 3:</label>
                         <div class="col-sm-4">
-                            <input id="revenueGoalYear3" type="text" ng-model="proposalSession.customerGoal.revenueGoalYear3" class="form-control" ui-money-mask/>
+                            <input kendo-numeric-text-box id="revenueGoalYear3" k-options="kendoNumericTextBoxOptions" k-ng-model="proposalSession.customerGoal.revenueGoalYear3" style="width: 100%; height: 100%;" />
                         </div>
                     </div>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" for="revenueGoalYear4">Year 4:</label>
                         <div class="col-sm-4">
-                            <input id="revenueGoalYear4" type="text" ng-model="proposalSession.customerGoal.revenueGoalYear4" class="form-control" ui-money-mask/>
+                            <input kendo-numeric-text-box id="revenueGoalYear4" k-options="kendoNumericTextBoxOptions" k-ng-model="proposalSession.customerGoal.revenueGoalYear4" style="width: 100%; height: 100%;" />
                         </div>
                     </div>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" for="revenueGoalYear5">Year 5:</label>
                         <div class="col-sm-4">
-                            <input id="revenueGoalYear5" type="text" ng-model="proposalSession.customerGoal.revenueGoalYear5" class="form-control" ui-money-mask/>
+                            <input kendo-numeric-text-box id="revenueGoalYear5" k-options="kendoNumericTextBoxOptions" k-ng-model="proposalSession.customerGoal.revenueGoalYear5" style="width: 100%; height: 100%;" />
                         </div>
                     </div>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" for="upfrontFees">Upfront Fees:</label>
                         <div class="col-sm-4">
-                            <input id="upfrontFees" type="text" ng-model="proposalSession.customerGoal.upfrontFees" class="form-control" ui-money-mask/>
+                            <input kendo-numeric-text-box id="upfrontFees" k-options="kendoNumericTextBoxOptions" k-ng-model="proposalSession.customerGoal.upfrontFees" style="width: 100%; height: 100%;" />
                         </div>
                     </div>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" for="upfrontFees">Lag Time:</label>
                         <div class="col-sm-4">
-                            <input id="lagTime" type="number" ng-model="proposalSession.customerGoal.lagTime" class="form-control" ui-number-mask="0" min="0" max="12"/>
+                            <input kendo-numeric-text-box id="lagTime" k-options="lagTimeTextBoxOptions" k-ng-model="proposalSession.customerGoal.lagTime" style="width: 100%; height: 100%;" />
                         </div>
                     </div>
                 </form>

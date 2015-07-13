@@ -599,13 +599,6 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
 
 angular.module("proposal/manage-proposal.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("proposal/manage-proposal.tpl.html",
-    "<style>\n" +
-    "    .form-control.k-widget\n" +
-    "    {\n" +
-    "        padding: 0;\n" +
-    "        width: 100%;\n" +
-    "    }\n" +
-    "</style>\n" +
     "<div class=\"row\">\n" +
     "    <h1 class=\"page-header\">\n" +
     "        Proposal Session\n" +
@@ -659,7 +652,7 @@ angular.module("proposal/manage-proposal.tpl.html", []).run(["$templateCache", f
     "                    <div class=\"form-group form-group-lg\">\n" +
     "                        <label class=\"col-sm-2 control-label\" for=\"contactName\">Contact Name:</label>\n" +
     "                        <div class=\"col-sm-4\">\n" +
-    "                            <input id=\"contactName\" type=\"text\" ng-model=\"proposalSession.customerGoal.contactName\" class=\"form-control\" ng-disabled=\"true\" />\n" +
+    "                            <input id=\"contactName\" type=\"text\" ng-model=\"proposalSession.customerGoal.contactName\" ng-disabled=\"true\" class=\"form-control\" />\n" +
     "                        </div>\n" +
     "                    </div>\n" +
     "                    <div class=\"form-group form-group-lg\">\n" +
@@ -673,7 +666,7 @@ angular.module("proposal/manage-proposal.tpl.html", []).run(["$templateCache", f
     "                    <div class=\"form-group form-group-lg\">\n" +
     "                        <label class=\"col-sm-2 control-label\" for=\"currentValuation\">Current Valuation:</label>\n" +
     "                        <div class=\"col-sm-4\">\n" +
-    "                            <input id=\"currentValuation\" type=\"text\" ng-model=\"proposalSession.customerGoal.currentValuation\" class=\"form-control\" ui-money-mask/>\n" +
+    "                            <input kendo-numeric-text-box id=\"currentValuation\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.currentValuation\" style=\"width: 100%; height: 100%;\" />\n" +
     "                        </div>\n" +
     "                    </div>\n" +
     "                    <div class=\"form-group form-group-lg\">\n" +
@@ -682,43 +675,43 @@ angular.module("proposal/manage-proposal.tpl.html", []).run(["$templateCache", f
     "                    <div class=\"form-group form-group-lg\">\n" +
     "                        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear1\">Year 1:</label>\n" +
     "                        <div class=\"col-sm-4\">\n" +
-    "                            <input id=\"revenueGoalYear1\" type=\"text\" ng-model=\"proposalSession.customerGoal.revenueGoalYear1\" class=\"form-control\" ui-money-mask/>\n" +
+    "                            <input kendo-numeric-text-box id=\"revenueGoalYear1\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.revenueGoalYear1\" style=\"width: 100%; height: 100%;\" />\n" +
     "                        </div>\n" +
     "                    </div>\n" +
     "                    <div class=\"form-group form-group-lg\">\n" +
     "                        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear2\">Year 2:</label>\n" +
     "                        <div class=\"col-sm-4\">\n" +
-    "                            <input id=\"revenueGoalYear2\" type=\"text\" ng-model=\"proposalSession.customerGoal.revenueGoalYear2\" class=\"form-control\" ui-money-mask/>\n" +
+    "                            <input kendo-numeric-text-box id=\"revenueGoalYear2\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.revenueGoalYear2\" style=\"width: 100%; height: 100%;\" />\n" +
     "                        </div>\n" +
     "                    </div>\n" +
     "                    <div class=\"form-group form-group-lg\">\n" +
     "                        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear3\">Year 3:</label>\n" +
     "                        <div class=\"col-sm-4\">\n" +
-    "                            <input id=\"revenueGoalYear3\" type=\"text\" ng-model=\"proposalSession.customerGoal.revenueGoalYear3\" class=\"form-control\" ui-money-mask/>\n" +
+    "                            <input kendo-numeric-text-box id=\"revenueGoalYear3\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.revenueGoalYear3\" style=\"width: 100%; height: 100%;\" />\n" +
     "                        </div>\n" +
     "                    </div>\n" +
     "                    <div class=\"form-group form-group-lg\">\n" +
     "                        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear4\">Year 4:</label>\n" +
     "                        <div class=\"col-sm-4\">\n" +
-    "                            <input id=\"revenueGoalYear4\" type=\"text\" ng-model=\"proposalSession.customerGoal.revenueGoalYear4\" class=\"form-control\" ui-money-mask/>\n" +
+    "                            <input kendo-numeric-text-box id=\"revenueGoalYear4\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.revenueGoalYear4\" style=\"width: 100%; height: 100%;\" />\n" +
     "                        </div>\n" +
     "                    </div>\n" +
     "                    <div class=\"form-group form-group-lg\">\n" +
     "                        <label class=\"col-sm-2 control-label\" for=\"revenueGoalYear5\">Year 5:</label>\n" +
     "                        <div class=\"col-sm-4\">\n" +
-    "                            <input id=\"revenueGoalYear5\" type=\"text\" ng-model=\"proposalSession.customerGoal.revenueGoalYear5\" class=\"form-control\" ui-money-mask/>\n" +
+    "                            <input kendo-numeric-text-box id=\"revenueGoalYear5\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.revenueGoalYear5\" style=\"width: 100%; height: 100%;\" />\n" +
     "                        </div>\n" +
     "                    </div>\n" +
     "                    <div class=\"form-group form-group-lg\">\n" +
     "                        <label class=\"col-sm-2 control-label\" for=\"upfrontFees\">Upfront Fees:</label>\n" +
     "                        <div class=\"col-sm-4\">\n" +
-    "                            <input id=\"upfrontFees\" type=\"text\" ng-model=\"proposalSession.customerGoal.upfrontFees\" class=\"form-control\" ui-money-mask/>\n" +
+    "                            <input kendo-numeric-text-box id=\"upfrontFees\" k-options=\"kendoNumericTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.upfrontFees\" style=\"width: 100%; height: 100%;\" />\n" +
     "                        </div>\n" +
     "                    </div>\n" +
     "                    <div class=\"form-group form-group-lg\">\n" +
     "                        <label class=\"col-sm-2 control-label\" for=\"upfrontFees\">Lag Time:</label>\n" +
     "                        <div class=\"col-sm-4\">\n" +
-    "                            <input id=\"lagTime\" type=\"number\" ng-model=\"proposalSession.customerGoal.lagTime\" class=\"form-control\" ui-number-mask=\"0\" min=\"0\" max=\"12\"/>\n" +
+    "                            <input kendo-numeric-text-box id=\"lagTime\" k-options=\"lagTimeTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.lagTime\" style=\"width: 100%; height: 100%;\" />\n" +
     "                        </div>\n" +
     "                    </div>\n" +
     "                </form>\n" +

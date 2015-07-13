@@ -22,6 +22,19 @@ angular.module('ngBoilerplate.proposal', [
     return service;
 })
 .controller("ManageProposalCtrl", function($scope, proposalService, customerService, $state, growl) {
+    $scope.kendoNumericTextBoxOptions = {
+        min: "0",
+        max: "100000000",
+        format: "#",
+        spinners: false
+    };
+
+    $scope.lagTimeTextBoxOptions = {
+        min: "0",
+        max: "12",
+        format: "c2"
+    };
+
     $scope.customerAutoComplete = {
         minLength: 2,
         dataTextField: 'companyName',
