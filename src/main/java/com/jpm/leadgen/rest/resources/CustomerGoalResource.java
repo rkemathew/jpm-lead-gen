@@ -11,7 +11,9 @@ import java.math.BigDecimal;
  */
 public class CustomerGoalResource extends ResourceSupport {
     private Long rid;
-    private Customer customer;
+    private Long customerRid;
+    private String contactName;
+    private String companyName;
     private BigDecimal currentValuation;
     private BigDecimal revenueGoalYear1;
     private BigDecimal revenueGoalYear2;
@@ -29,12 +31,28 @@ public class CustomerGoalResource extends ResourceSupport {
         this.rid = rid;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Long getCustomerRid() {
+        return customerRid;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomerRid(Long customerRid) {
+        this.customerRid = customerRid;
+    }
+
+    public String getContactName() {
+        return contactName;
+    }
+
+    public void setContactName(String contactName) {
+        this.contactName = contactName;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public BigDecimal getCurrentValuation() {
@@ -102,7 +120,11 @@ public class CustomerGoalResource extends ResourceSupport {
     }
 
     public CustomerGoal toCustomerGoal() {
+        Customer customer = new Customer();
+        customer.setId(customerRid);
+
         CustomerGoal customerGoal = new CustomerGoal();
+        customerGoal.setCustomer(customer);
         customerGoal.setCurrentValuation(currentValuation);
         customerGoal.setRevenueGoalYear1(revenueGoalYear1);
         customerGoal.setRevenueGoalYear2(revenueGoalYear2);
@@ -111,7 +133,6 @@ public class CustomerGoalResource extends ResourceSupport {
         customerGoal.setRevenueGoalYear5(revenueGoalYear5);
         customerGoal.setUpfrontFees(upfrontFees);
         customerGoal.setLagTime(lagTime);
-
         return customerGoal;
     }
 }

@@ -19,7 +19,6 @@ module.exports = function ( karma ) {
       'vendor/angular-base64/angular-base64.min.js',
       'vendor/angular-hateoas/src/angular-hateoas.js',
       'vendor/angular-growl-v2/build/angular-growl.js',
-      'vendor/angular-input-masks/angular-input-masks-standalone.min.js',
       'vendor/kendo-ui-core/js/kendo.ui.core.min.js',
       'vendor/kendo-ui-core/js/kendo.angular.min.js',
       'build/templates-app.js',

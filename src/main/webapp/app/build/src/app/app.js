@@ -6,7 +6,7 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.account',
   'ngBoilerplate.blog',
   'ngBoilerplate.customer',
-  'ngBoilerplate.proposal',
+  'ngBoilerplate.proposalSession',
   'ui.router',
   'ui.utils',
   'angular-growl',
@@ -28,6 +28,5 @@ angular.module( 'ngBoilerplate', [
     }
   });
 })
-
 ;
 

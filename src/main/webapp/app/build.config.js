@@ -72,13 +72,11 @@ module.exports = {
       'vendor/angular-base64/angular-base64.min.js',
       'vendor/angular-hateoas/src/angular-hateoas.js',
       'vendor/angular-growl-v2/build/angular-growl.js',
-      'vendor/angular-input-masks/angular-input-masks-standalone.min.js',
       'vendor/kendo-ui-core/js/kendo.ui.core.min.js',
       'vendor/kendo-ui-core/js/kendo.angular.min.js'
     ],
     css: [
       'vendor/angular-growl-v2/build/angular-growl.css',
-      'vendor/kendo-ui-core/styles/kendo.common-bootstrap.core.min.css',
       'vendor/kendo-ui-core/styles/kendo.common-bootstrap.min.css',
       'vendor/kendo-ui-core/styles/kendo.default.min.css'
     ],
@@ -87,3 +85,4 @@ module.exports = {
     ]
   },
 };
+

@@ -23,7 +23,6 @@
 
     <!-- compiled CSS -->
     <link rel="stylesheet" type="text/css" href="vendor/angular-growl-v2/build/angular-growl.css" />
-    <link rel="stylesheet" type="text/css" href="vendor/kendo-ui-core/styles/kendo.common-bootstrap.core.min.css" />
     <link rel="stylesheet" type="text/css" href="vendor/kendo-ui-core/styles/kendo.common-bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="vendor/kendo-ui-core/styles/kendo.default.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/ngbp-0.3.2.css" />
@@ -39,7 +38,6 @@
     <script type="text/javascript" src="vendor/angular-base64/angular-base64.min.js"></script>
     <script type="text/javascript" src="vendor/angular-hateoas/src/angular-hateoas.js"></script>
     <script type="text/javascript" src="vendor/angular-growl-v2/build/angular-growl.js"></script>
-    <script type="text/javascript" src="vendor/angular-input-masks/angular-input-masks-standalone.min.js"></script>
     <script type="text/javascript" src="vendor/kendo-ui-core/js/kendo.ui.core.min.js"></script>
     <script type="text/javascript" src="vendor/kendo-ui-core/js/kendo.angular.min.js"></script>
     <script type="text/javascript" src="src/app/about/about.js"></script>
@@ -48,7 +46,7 @@
     <script type="text/javascript" src="src/app/blog/blog.js"></script>
     <script type="text/javascript" src="src/app/customer/customer.js"></script>
     <script type="text/javascript" src="src/app/home/home.js"></script>
-    <script type="text/javascript" src="src/app/proposal/proposal.js"></script>
+    <script type="text/javascript" src="src/app/proposalSession/proposalSession.js"></script>
     <script type="text/javascript" src="src/common/plusOne/plusOne.js"></script>
     <script type="text/javascript" src="templates-common.js"></script>
     <script type="text/javascript" src="templates-app.js"></script>
@@ -69,6 +67,12 @@
       .navbar-nav.navbar-right:last-child {
         margin-right: 0;
       }
+      .navbar-nav > li > a, .navbar-brand {
+        padding-top: 14px !important;
+        padding-bottom:0 !important;
+        height: 33px;
+      }
+      .navbar {min-height: 33px !important;}
     </style>
   </head>
   <body>
@@ -101,9 +105,9 @@
               </a>
             </li>
             <li ui-sref-active="active">
-              <a href="" ui-sref="manageProposal">
+              <a href="" ui-sref="manageProposalSession">
                 <i class="fa fa-newspaper-o"></i>
-                Proposal
+                Proposal Session
               </a>
             </li>
             <li ui-sref-active="active">
@@ -130,6 +134,7 @@
 
     <div class="container" ui-view="main"></div>
 
+<!--
     <footer class="footer">
       <div class="container">
         <div class="footer-inner">
@@ -156,5 +161,6 @@
         </div>
       </div>
     </footer>
+-->
   </body>
 </html>

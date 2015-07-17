@@ -18,7 +18,6 @@ public class CustomerResource extends ResourceSupport {
     private String phone1;
     private String phone2;
     private String email;
-    private String errorMessage;
 
     public Long getRid() {
         return rid;

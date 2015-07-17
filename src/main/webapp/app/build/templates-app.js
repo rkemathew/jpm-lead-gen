@@ -1,4 +1,4 @@
-angular.module('templates-app', ['about/about.tpl.html', 'account/login.tpl.html', 'account/register.tpl.html', 'account/search.tpl.html', 'blog/manage-blogs.tpl.html', 'customer/manage-customer.tpl.html', 'home/home.tpl.html', 'proposal/advanced-debt-calc.tpl.html', 'proposal/assumed-sales-calc.tpl.html', 'proposal/commission-calc.tpl.html', 'proposal/customer-goal.tpl.html', 'proposal/jpm-model.tpl.html', 'proposal/manage-proposal.tpl.html', 'proposal/proposal-output.tpl.html', 'proposal/recruiting-effort-calc.tpl.html']);
+angular.module('templates-app', ['about/about.tpl.html', 'account/login.tpl.html', 'account/register.tpl.html', 'account/search.tpl.html', 'blog/manage-blogs.tpl.html', 'customer/manage-customer.tpl.html', 'home/home.tpl.html', 'proposalSession/advanced-debt-calc.tpl.html', 'proposalSession/assumed-sales-calc.tpl.html', 'proposalSession/commission-calc.tpl.html', 'proposalSession/customer-goal.tpl.html', 'proposalSession/jpm-model.tpl.html', 'proposalSession/manage-proposal-session.tpl.html', 'proposalSession/proposal-output.tpl.html', 'proposalSession/recruiting-effort-calc.tpl.html']);
 
 angular.module("about/about.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("about/about.tpl.html",
@@ -597,29 +597,29 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "");
 }]);
 
-angular.module("proposal/advanced-debt-calc.tpl.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("proposal/advanced-debt-calc.tpl.html",
-    "<h1 class=\"page-header\">Advanced to Debt Ratio Calculator</h1>\n" +
+angular.module("proposalSession/advanced-debt-calc.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("proposalSession/advanced-debt-calc.tpl.html",
+    "<h3 class=\"page-header\">Advanced to Debt Ratio Calculator</h3>\n" +
     "");
 }]);
 
-angular.module("proposal/assumed-sales-calc.tpl.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("proposal/assumed-sales-calc.tpl.html",
-    "<h1 class=\"page-header\">Assumed Sales Caculator</h1>\n" +
+angular.module("proposalSession/assumed-sales-calc.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("proposalSession/assumed-sales-calc.tpl.html",
+    "<h3 class=\"page-header\">Assumed Sales Caculator</h3>\n" +
     "");
 }]);
 
-angular.module("proposal/commission-calc.tpl.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("proposal/commission-calc.tpl.html",
-    "<h1 class=\"page-header\">Commission Calculator</h1>\n" +
+angular.module("proposalSession/commission-calc.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("proposalSession/commission-calc.tpl.html",
+    "<h3 class=\"page-header\">Commission Calculator</h3>\n" +
     "");
 }]);
 
-angular.module("proposal/customer-goal.tpl.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("proposal/customer-goal.tpl.html",
-    "<h1 class=\"page-header\">Customer Goals</h1>\n" +
+angular.module("proposalSession/customer-goal.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("proposalSession/customer-goal.tpl.html",
+    "<h3 class=\"page-header\">Customer Goals</h3>\n" +
     "\n" +
-    "<form name=\"proposalSessionForm\" ng-submit=\"createProposalSession()\" class=\"form-horizontal\">\n" +
+    "<form name=\"customerGoalForm\" class=\"form-horizontal\">\n" +
     "    <div class=\"form-group form-group-lg\">\n" +
     "        <label class=\"col-sm-2 control-label\" for=\"contactName\">Contact Name:</label>\n" +
     "        <div class=\"col-sm-4\">\n" +
@@ -631,7 +631,7 @@ angular.module("proposal/customer-goal.tpl.html", []).run(["$templateCache", fun
     "        <div class=\"col-sm-4\">\n" +
     "            <input kendo-auto-complete id=\"companyName\"\n" +
     "                   ng-model=\"proposalSession.customerGoal.companyName\"\n" +
-    "                   k-options=\"customerAutoComplete\" class=\"form-control\" />\n" +
+    "                   k-options=\"customerAutoComplete\" class=\"form-control\" style=\"height: 100%;\"/>\n" +
     "        </div>\n" +
     "    </div>\n" +
     "    <div class=\"form-group form-group-lg\">\n" +
@@ -680,7 +680,7 @@ angular.module("proposal/customer-goal.tpl.html", []).run(["$templateCache", fun
     "        </div>\n" +
     "    </div>\n" +
     "    <div class=\"form-group form-group-lg\">\n" +
-    "        <label class=\"col-sm-2 control-label\" for=\"upfrontFees\">Lag Time:</label>\n" +
+    "        <label class=\"col-sm-2 control-label\" for=\"lagTime\">Lag Time:</label>\n" +
     "        <div class=\"col-sm-4\">\n" +
     "            <input kendo-numeric-text-box id=\"lagTime\" k-options=\"lagTimeTextBoxOptions\" k-ng-model=\"proposalSession.customerGoal.lagTime\" style=\"width: 100%; height: 100%;\" />\n" +
     "        </div>\n" +
@@ -689,19 +689,51 @@ angular.module("proposal/customer-goal.tpl.html", []).run(["$templateCache", fun
     "");
 }]);
 
-angular.module("proposal/jpm-model.tpl.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("proposal/jpm-model.tpl.html",
-    "<h1 class=\"page-header\">JPM Model</h1>\n" +
+angular.module("proposalSession/jpm-model.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("proposalSession/jpm-model.tpl.html",
+    "<h3 class=\"page-header\">JPM Model</h3>\n" +
     "");
 }]);
 
-angular.module("proposal/manage-proposal.tpl.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("proposal/manage-proposal.tpl.html",
+angular.module("proposalSession/manage-proposal-session.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("proposalSession/manage-proposal-session.tpl.html",
+    "<style>\n" +
+    "    /* reset everything to the default box model */\n" +
+    "    *, :before, :after {\n" +
+    "        -webkit-box-sizing: content-box;\n" +
+    "        -moz-box-sizing: content-box;\n" +
+    "        box-sizing: content-box;\n" +
+    "    }\n" +
+    "\n" +
+    "    /* set a border-box model only to elements that need it */\n" +
+    "    .form-control, /* if this class is applied to a Kendo UI widget, its layout may change */\n" +
+    "    .container,\n" +
+    "    .container-fluid,\n" +
+    "    .row,\n" +
+    "    .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1,\n" +
+    "    .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2,\n" +
+    "    .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3,\n" +
+    "    .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4,\n" +
+    "    .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5,\n" +
+    "    .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6,\n" +
+    "    .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7,\n" +
+    "    .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8,\n" +
+    "    .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9,\n" +
+    "    .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10,\n" +
+    "    .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11,\n" +
+    "    .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {\n" +
+    "        -webkit-box-sizing: border-box;\n" +
+    "        -moz-box-sizing: border-box;\n" +
+    "        box-sizing: border-box;\n" +
+    "    }\n" +
+    "</style>\n" +
     "<div class=\"row\">\n" +
     "    <h1 class=\"page-header\">\n" +
     "        Proposal Session\n" +
     "    </h1>\n" +
-    "    <div kendo-tab-strip>\n" +
+    "\n" +
+    "    <!-- Nav tabs -->\n" +
+    "    <div kendo-tab-strip k-options=\"proposalFormKendoTabStrip\">\n" +
     "        <ul>\n" +
     "            <li class=\"k-state-active\"><i class=\"fa fa-soccer-ball-o\"></i> Customer Goal</li>\n" +
     "            <li><i class=\"fa fa-pencil-square\"></i> JPM Model</li>\n" +
@@ -726,14 +758,14 @@ angular.module("proposal/manage-proposal.tpl.html", []).run(["$templateCache", f
     "");
 }]);
 
-angular.module("proposal/proposal-output.tpl.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("proposal/proposal-output.tpl.html",
-    "<h1 class=\"page-header\">Proposal Output</h1>\n" +
+angular.module("proposalSession/proposal-output.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("proposalSession/proposal-output.tpl.html",
+    "<h3 class=\"page-header\">Proposal Output</h3>\n" +
     "");
 }]);
 
-angular.module("proposal/recruiting-effort-calc.tpl.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("proposal/recruiting-effort-calc.tpl.html",
-    "<h1 class=\"page-header\">Recruiting Effort Calculator</h1>\n" +
+angular.module("proposalSession/recruiting-effort-calc.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("proposalSession/recruiting-effort-calc.tpl.html",
+    "<h3 class=\"page-header\">Recruiting Effort Calculator</h3>\n" +
     "");
 }]);

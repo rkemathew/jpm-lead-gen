@@ -1,6 +1,6 @@
-<h1 class="page-header">Customer Goals</h1>
+<h3 class="page-header">Customer Goals</h3>
 
-<form name="proposalSessionForm" ng-submit="createProposalSession()" class="form-horizontal">
+<form name="customerGoalForm" class="form-horizontal">
     <div class="form-group form-group-lg">
         <label class="col-sm-2 control-label" for="contactName">Contact Name:</label>
         <div class="col-sm-4">
@@ -12,7 +12,7 @@
         <div class="col-sm-4">
             <input kendo-auto-complete id="companyName"
                    ng-model="proposalSession.customerGoal.companyName"
-                   k-options="customerAutoComplete" class="form-control" />
+                   k-options="customerAutoComplete" class="form-control" style="height: 100%;"/>
         </div>
     </div>
     <div class="form-group form-group-lg">
@@ -61,7 +61,7 @@
         </div>
     </div>
     <div class="form-group form-group-lg">
-        <label class="col-sm-2 control-label" for="upfrontFees">Lag Time:</label>
+        <label class="col-sm-2 control-label" for="lagTime">Lag Time:</label>
         <div class="col-sm-4">
             <input kendo-numeric-text-box id="lagTime" k-options="lagTimeTextBoxOptions" k-ng-model="proposalSession.customerGoal.lagTime" style="width: 100%; height: 100%;" />
         </div>
