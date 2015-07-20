@@ -79,12 +79,12 @@ angular.module('ngBoilerplate.proposalSession', [
         }
     };
 
-    $scope.proposalSessionOriginal = angular.copy($scope.proposalSession);
-    $scope.customerGoalFormChanged = false;
+    $scope.proposalSessionPristine = angular.copy($scope.proposalSession);
+    $scope.proposalSessionChanged = false;
 
     $scope.$watch('proposalSession', function(newValue, oldValue) {
         if (newValue != oldValue) {
-            $scope.customerGoalFormChanged = ! angular.equals($scope.proposalSession.customerGoal, $scope.proposalSessionOriginal.customerGoal);
+            $scope.proposalSessionChanged = ! angular.equals($scope.proposalSession, $scope.proposalSessionPristine);
         }
     }, true);
 
@@ -105,9 +105,28 @@ angular.module('ngBoilerplate.proposalSession', [
     };
 
     function proposalFormKendoTabStrip_onSelect(e) {
-        console.log("Selected: " + $(e.item).find("> .k-link").text());
-        console.log($scope.customerGoalFormChanged + "... saving.");
-        console.log(proposalSessionService.createOrUpdateProposalSession($scope.proposalSession));
+//        console.log("Selected: " + $(e.item).find("> .k-link").text());
+
+        if ($scope.proposalSessionChanged) {
+            console.log("Proposal Session Changed: " + $scope.proposalSessionChanged + "... saving.");
+
+            proposalSessionService.createOrUpdateProposalSession($scope.proposalSession).then(
+                function(data) {
+                    if ($scope.proposalSession.rid === -1) {
+                        $scope.proposalSession.rid = data.rid;
+                        growl.success('Proposal Session Created');
+                    } else {
+                        growl.success('Proposal Session Updated');
+                    }
+
+                    $scope.proposalSessionPristine = angular.copy($scope.proposalSession);
+                    $scope.proposalSessionChanged = false;
+                },
+                function(error) {
+                    growl.error(error.data.errorMessage);
+                }
+            );
+        }
     }
 
     /* Kendo UI Options common across Forms */
@@ -132,8 +151,8 @@ angular.module('ngBoilerplate.proposalSession', [
             serverFiltering: true,
             transport: {
                 read: function(options) {
-                    if ($scope.proposalSession.customerGoal.companyName.length >= 2) {
-                        customerService.getCustomersLike($scope.proposalSession.customerGoal.companyName).then(function(data) {
+                    if ($scope.companyNameLookup.length >= 2) {
+                        customerService.getCustomersLike($scope.companyNameLookup).then(function(data) {
                             return options.success(data.customers);
                         });
                     } else {

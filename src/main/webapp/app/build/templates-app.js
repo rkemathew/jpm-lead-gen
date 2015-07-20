@@ -630,7 +630,7 @@ angular.module("proposalSession/customer-goal.tpl.html", []).run(["$templateCach
     "        <label class=\"col-sm-2 control-label\" for=\"companyName\">Company Name:</label>\n" +
     "        <div class=\"col-sm-4\">\n" +
     "            <input kendo-auto-complete id=\"companyName\"\n" +
-    "                   ng-model=\"proposalSession.customerGoal.companyName\"\n" +
+    "                   ng-model=\"companyNameLookup\"\n" +
     "                   k-options=\"customerAutoComplete\" class=\"form-control\" style=\"height: 100%;\"/>\n" +
     "        </div>\n" +
     "    </div>\n" +

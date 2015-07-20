@@ -40,7 +40,14 @@ public class ProposalSessionController {
     public ResponseEntity<ProposalSessionResource> createProposalSession(
             @RequestBody ProposalSessionResource sentProposalSession
     ) {
-        ProposalSession proposalSession = proposalSessionService.createProposalSession(sentProposalSession.toProposalSession());
+        long proposalSessionId = sentProposalSession.getRid();
+        ProposalSession proposalSession = null;
+        if (proposalSessionId == -1) {
+            proposalSession = proposalSessionService.createProposalSession(sentProposalSession.toProposalSession());
+        } else {
+            proposalSession = proposalSessionService.updateProposalSession(proposalSessionId, sentProposalSession.toProposalSession());
+        }
+
         ProposalSessionResource res = new ProposalSessionResourceAsm().toResource(proposalSession);
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(URI.create(res.getLink("self").getHref()));

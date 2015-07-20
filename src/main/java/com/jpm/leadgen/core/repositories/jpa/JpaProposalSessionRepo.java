@@ -1,24 +1,24 @@
 package com.jpm.leadgen.core.repositories.jpa;
 
-import com.jpm.leadgen.core.models.entities.Customer;
-import com.jpm.leadgen.core.models.entities.CustomerGoal;
 import com.jpm.leadgen.core.models.entities.ProposalSession;
-import com.jpm.leadgen.core.repositories.CustomerRepo;
 import com.jpm.leadgen.core.repositories.ProposalSessionRepo;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import java.util.List;
 
 /**
- * Created by Chris on 7/10/14.
+ * Created by Ronnie on 7/20/15.
  */
 @Repository
 public class JpaProposalSessionRepo implements ProposalSessionRepo {
     @PersistenceContext
     private EntityManager em;
+
+    @Override
+    public ProposalSession findProposalSession(Long id) {
+        return em.find(ProposalSession.class, id);
+    }
 
     @Override
     public ProposalSession createProposalSession(ProposalSession data) {

@@ -103,4 +103,54 @@ public class CustomerGoal {
     public void setLagTime(int lagTime) {
         this.lagTime = lagTime;
     }
+
+    public boolean shallowEquals(Object other) {
+        if (this == other) return true;
+
+        if (other == null || (this.getClass() != other.getClass())) {
+            return false;
+        }
+
+        CustomerGoal customerGoal = (CustomerGoal) other;
+
+        return ((this.customer != null ? 0 : customer.getId()) == (customerGoal.customer != null ? 0 : customerGoal.customer.getId())) &&
+               (this.currentValuation.compareTo(customerGoal.currentValuation) == 0) &&
+               (this.revenueGoalYear1.compareTo(customerGoal.revenueGoalYear1) == 0) &&
+               (this.revenueGoalYear2.compareTo(customerGoal.revenueGoalYear2) == 0) &&
+               (this.revenueGoalYear3.compareTo(customerGoal.revenueGoalYear3) == 0) &&
+               (this.revenueGoalYear4.compareTo(customerGoal.revenueGoalYear4) == 0) &&
+               (this.revenueGoalYear5.compareTo(customerGoal.revenueGoalYear5) == 0) &&
+               (this.upfrontFees.compareTo(customerGoal.upfrontFees) == 0) &&
+               (this.lagTime == customerGoal.lagTime);
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) return true;
+
+        if (other == null || (this.getClass() != other.getClass())) {
+            return false;
+        }
+
+        CustomerGoal customerGoal = (CustomerGoal) other;
+        return (this.id == customerGoal.id) && shallowEquals(other);
+    }
+
+    @Override
+    public int hashCode() {
+        int retVal = 0;
+
+        retVal = retVal + id.intValue();
+        retVal = retVal + customer.hashCode();
+        retVal = retVal + currentValuation.intValue();
+        retVal = retVal + revenueGoalYear1.intValue();
+        retVal = retVal + revenueGoalYear2.intValue();
+        retVal = retVal + revenueGoalYear3.intValue();
+        retVal = retVal + revenueGoalYear4.intValue();
+        retVal = retVal + revenueGoalYear5.intValue();
+        retVal = retVal + upfrontFees.intValue();
+        retVal = retVal + lagTime;
+
+        return retVal;
+    }
 }
