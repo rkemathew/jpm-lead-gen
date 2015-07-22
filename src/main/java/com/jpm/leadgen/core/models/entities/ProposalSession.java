@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import java.util.Date;
 
 /**
  * Created by Super User on 6/11/2015.
@@ -14,6 +15,10 @@ public class ProposalSession {
     private Long id;
     @OneToOne
     private CustomerGoal customerGoal;
+    private Date createdOn;
+    private String createdBy;
+    private Date modifiedOn;
+    private String modifiedBy;
 
     public Long getId() {
         return id;
@@ -29,6 +34,38 @@ public class ProposalSession {
 
     public void setCustomerGoal(CustomerGoal customerGoal) {
         this.customerGoal = customerGoal;
+    }
+
+    public Date getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(Date createdOn) {
+        this.createdOn = createdOn;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public Date getModifiedOn() {
+        return modifiedOn;
+    }
+
+    public void setModifiedOn(Date modifiedOn) {
+        this.modifiedOn = modifiedOn;
+    }
+
+    public String getModifiedBy() {
+        return modifiedBy;
+    }
+
+    public void setModifiedBy(String modifiedBy) {
+        this.modifiedBy = modifiedBy;
     }
 
     public boolean shallowEquals(Object other) {

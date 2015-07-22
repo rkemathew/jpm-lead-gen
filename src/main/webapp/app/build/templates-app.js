@@ -368,6 +368,36 @@ angular.module("blog/manage-blogs.tpl.html", []).run(["$templateCache", function
 
 angular.module("customer/manage-customer.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("customer/manage-customer.tpl.html",
+    "<style>\n" +
+    "    /* reset everything to the default box model */\n" +
+    "    *, :before, :after {\n" +
+    "    -webkit-box-sizing: content-box;\n" +
+    "    -moz-box-sizing: content-box;\n" +
+    "    box-sizing: content-box;\n" +
+    "    }\n" +
+    "\n" +
+    "    /* set a border-box model only to elements that need it */\n" +
+    "    .form-control, /* if this class is applied to a Kendo UI widget, its layout may change */\n" +
+    "    .container,\n" +
+    "    .container-fluid,\n" +
+    "    .row,\n" +
+    "    .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1,\n" +
+    "    .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2,\n" +
+    "    .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3,\n" +
+    "    .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4,\n" +
+    "    .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5,\n" +
+    "    .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6,\n" +
+    "    .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7,\n" +
+    "    .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8,\n" +
+    "    .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9,\n" +
+    "    .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10,\n" +
+    "    .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11,\n" +
+    "    .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {\n" +
+    "    -webkit-box-sizing: border-box;\n" +
+    "    -moz-box-sizing: border-box;\n" +
+    "    box-sizing: border-box;\n" +
+    "    }\n" +
+    "</style>\n" +
     "<div class=\"row\">\n" +
     "    <h1 class=\"page-header\">\n" +
     "        Customer Management\n" +
@@ -623,7 +653,7 @@ angular.module("proposalSession/customer-goal.tpl.html", []).run(["$templateCach
     "    <div class=\"form-group form-group-lg\">\n" +
     "        <label class=\"col-sm-2 control-label\" for=\"contactName\">Contact Name:</label>\n" +
     "        <div class=\"col-sm-4\">\n" +
-    "            <input id=\"contactName\" type=\"text\" ng-model=\"proposalSession.customerGoal.contactName\" ng-disabled=\"true\" class=\"form-control\" />\n" +
+    "            <input id=\"contactName\" type=\"text\" ng-model=\"proposalSession.customerGoal.customer.contactName\" ng-disabled=\"true\" class=\"form-control\" />\n" +
     "        </div>\n" +
     "    </div>\n" +
     "    <div class=\"form-group form-group-lg\">\n" +

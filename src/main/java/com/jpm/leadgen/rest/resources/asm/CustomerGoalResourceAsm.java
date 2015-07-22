@@ -21,6 +21,7 @@ public class CustomerGoalResourceAsm extends ResourceAssemblerSupport<CustomerGo
     public CustomerGoalResource toResource(CustomerGoal customerGoal) {
         CustomerGoalResource res = new CustomerGoalResource();
         res.setRid(customerGoal.getId());
+        res.setCustomer(new CustomerResourceAsm().toResource(customerGoal.getCustomer()));
         res.setCurrentValuation(customerGoal.getCurrentValuation());
         res.setRevenueGoalYear1(customerGoal.getRevenueGoalYear1());
         res.setRevenueGoalYear2(customerGoal.getRevenueGoalYear2());

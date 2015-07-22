@@ -11,9 +11,7 @@ import java.math.BigDecimal;
  */
 public class CustomerGoalResource extends ResourceSupport {
     private Long rid;
-    private Long customerRid;
-    private String contactName;
-    private String companyName;
+    private CustomerResource customer;
     private BigDecimal currentValuation;
     private BigDecimal revenueGoalYear1;
     private BigDecimal revenueGoalYear2;
@@ -31,28 +29,12 @@ public class CustomerGoalResource extends ResourceSupport {
         this.rid = rid;
     }
 
-    public Long getCustomerRid() {
-        return customerRid;
+    public CustomerResource getCustomer() {
+        return customer;
     }
 
-    public void setCustomerRid(Long customerRid) {
-        this.customerRid = customerRid;
-    }
-
-    public String getContactName() {
-        return contactName;
-    }
-
-    public void setContactName(String contactName) {
-        this.contactName = contactName;
-    }
-
-    public String getCompanyName() {
-        return companyName;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setCustomer(CustomerResource customer) {
+        this.customer = customer;
     }
 
     public BigDecimal getCurrentValuation() {
@@ -120,11 +102,8 @@ public class CustomerGoalResource extends ResourceSupport {
     }
 
     public CustomerGoal toCustomerGoal() {
-        Customer customer = new Customer();
-        customer.setId(customerRid);
-
         CustomerGoal customerGoal = new CustomerGoal();
-        customerGoal.setCustomer(customer);
+        customerGoal.setCustomer(customer.toCustomer());
         customerGoal.setCurrentValuation(currentValuation);
         customerGoal.setRevenueGoalYear1(revenueGoalYear1);
         customerGoal.setRevenueGoalYear2(revenueGoalYear2);

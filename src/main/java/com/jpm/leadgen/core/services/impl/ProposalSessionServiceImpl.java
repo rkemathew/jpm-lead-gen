@@ -9,9 +9,10 @@ import com.jpm.leadgen.core.repositories.ProposalSessionRepo;
 import com.jpm.leadgen.core.services.ProposalSessionService;
 import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Date;
 
 /**
  * Created by Ronnie on 6/11/15.
@@ -27,52 +28,57 @@ public class ProposalSessionServiceImpl implements ProposalSessionService {
     private ProposalSessionRepo proposalSessionRepo;
 
     @Override
+    public ProposalSession findProposalSession(Long id) {
+        return proposalSessionRepo.findProposalSession(id);
+    }
+
+    @Override
     public ProposalSession createProposalSession(ProposalSession proposalSessionDTO) {
         CustomerGoal customerGoalDTO = proposalSessionDTO.getCustomerGoal();
-        Customer customer = customerRepo.findCustomer(customerGoalDTO.getCustomer().getId());
+        Customer customer = customerGoalDTO.getCustomer();
 
-        customerGoalDTO.setCustomer(customer);
         CustomerGoal customerGoal = customerGoalRepo.createCustomerGoal(customerGoalDTO);
 
+        Date today = new Date();
         proposalSessionDTO.setCustomerGoal(customerGoal);
+        proposalSessionDTO.setCreatedBy("");
+        proposalSessionDTO.setCreatedOn(today);
+        proposalSessionDTO.setModifiedBy("");
+        proposalSessionDTO.setModifiedOn(today);
+
         return proposalSessionRepo.createProposalSession(proposalSessionDTO);
     }
 
     @Override
-    public ProposalSession updateProposalSession(Long proposalSessionId, ProposalSession proposalSessionDTO) {
+    public ProposalSession updateProposalSession(Long proposalSessionId, ProposalSession proposalSessionDTO) throws Exception {
         ProposalSession proposalSession = proposalSessionRepo.findProposalSession(proposalSessionId);
-        ProposalSession proposalSessionPristine = null;
-
-        try {
-            proposalSessionPristine = (ProposalSession) BeanUtils.cloneBean(proposalSession);
-        } catch(Exception e) {
-            //TODO: RKEM: Need to handle this exception
-        }
+        ProposalSession proposalSessionPristine = (ProposalSession) BeanUtils.cloneBean(proposalSession);
 
         updateCustomerGoalIfChanged(proposalSession, proposalSessionDTO);
 
         if (!proposalSession.shallowEquals(proposalSessionPristine)) {
+            proposalSession.setModifiedBy("");
+            proposalSession.setModifiedOn(new Date());
             proposalSession = proposalSessionRepo.updateProposalSession(proposalSessionId, proposalSession);
         }
 
         return proposalSession;
     }
 
-    protected void updateCustomerGoalIfChanged(ProposalSession proposalSession, ProposalSession proposalSessionDTO) {
+    protected void updateCustomerGoalIfChanged(ProposalSession proposalSession, ProposalSession proposalSessionDTO) throws Exception {
         CustomerGoal customerGoal = proposalSession.getCustomerGoal();
         CustomerGoal customerGoalDTO = proposalSessionDTO.getCustomerGoal();
 
         if (!customerGoal.shallowEquals(customerGoalDTO)) {
-            try {
-                long customerGoalId = customerGoal.getId();
-                BeanUtils.copyProperties(customerGoal, customerGoalDTO);
-                customerGoal.setId(customerGoalId);
-            } catch(Exception e) {
-                // TODO: RKEM: Need to handle this exception
-            }
-
-            Customer customer = customerRepo.findCustomer(customerGoal.getCustomer().getId());
-            customerGoal.setCustomer(customer);
+            long customerGoalId = customerGoal.getId();
+            BeanUtils.copyProperties(customerGoal, customerGoalDTO);
+            customerGoal.setCustomer(customerGoalDTO.getCustomer());
+            customerGoal.setId(customerGoalId);
         }
+    }
+
+    @Override
+    public CustomerGoal findCustomerGoal(Long id) {
+        return proposalSessionRepo.findCustomerGoal(id);
     }
 }

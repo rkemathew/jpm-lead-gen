@@ -113,7 +113,7 @@ public class CustomerGoal {
 
         CustomerGoal customerGoal = (CustomerGoal) other;
 
-        return ((this.customer != null ? 0 : customer.getId()) == (customerGoal.customer != null ? 0 : customerGoal.customer.getId())) &&
+        return ((this.customer == null ? 0 : customer.getId()) == (customerGoal.customer == null ? 0 : customerGoal.customer.getId())) &&
                (this.currentValuation.compareTo(customerGoal.currentValuation) == 0) &&
                (this.revenueGoalYear1.compareTo(customerGoal.revenueGoalYear1) == 0) &&
                (this.revenueGoalYear2.compareTo(customerGoal.revenueGoalYear2) == 0) &&

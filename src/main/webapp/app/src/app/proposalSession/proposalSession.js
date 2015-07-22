@@ -62,31 +62,69 @@ angular.module('ngBoilerplate.proposalSession', [
 .factory('proposalSessionService', function($resource, $q, $http) {
     var service = {};
 
-    service.createOrUpdateProposalSession = function(proposalSession) {
+    service.createProposalSession = function(proposalSession) {
         var ProposalSession = $resource("/jpm-lead-gen/rest/proposalSession");
         return ProposalSession.save({}, proposalSession).$promise;
     };
 
+    service.updateProposalSession = function(proposalSession) {
+        var ProposalSession = $resource("/jpm-lead-gen/rest/proposalSession/:proposalSessionId");
+        return ProposalSession.save({proposalSessionId: proposalSession.rid}, proposalSession).$promise;
+    };
+
+    service.findProposalSession = function(passedProposalSessionId) {
+        var ProposalSession = $resource("/jpm-lead-gen/rest/proposalSession/:proposalSessionId");
+        return ProposalSession.get({proposalSessionId: passedProposalSessionId}).$promise;
+    };
+
     return service;
 })
-.controller("ManageProposalSessionCtrl", function($scope, proposalSessionService, customerService, $state, growl) {
+.controller("ManageProposalSessionCtrl", function($scope, $rootScope, proposalSessionService, customerService, $state, growl) {
     /* Initialization and setting up watch to detect changes to forms */
     $scope.proposalSession = {
         rid: -1,
         customerGoal: {
             rid: -1,
-            customerRid: -1
+            customer: {
+                rid: -1
+            }
         }
     };
 
+    // If a Proposal Session was already active, then fetch its proposalSessionId from the rootScope
+    // and re-load it at the beginning of this scope. This will help reload the Proposal Session
+    // when navigating away from the Proposal Session menu and returning to it during the user session.
+    if ($rootScope.proposalSessionId !== undefined && $rootScope.proposalSessionId !== -1) {
+        proposalSessionService.findProposalSession($rootScope.proposalSessionId).then(function(data) {
+            $scope.proposalSession = data;
+            delete $scope.proposalSession.links;
+            delete $scope.proposalSession.customerGoal.links;
+            delete $scope.proposalSession.customerGoal.customer.links;
+
+            $scope.proposalSessionPristine = angular.copy($scope.proposalSession);
+            $scope.proposalSessionChanged = false;
+            $scope.companyNameLookup = $scope.proposalSession.customerGoal.customer.companyName;
+        });
+    }
+
+    // Keep a copy of the proposalSession Scope Object for comparison to check for changes
     $scope.proposalSessionPristine = angular.copy($scope.proposalSession);
     $scope.proposalSessionChanged = false;
 
+    // Angular watch on the proposalSession Scope Object to trigger a save
     $scope.$watch('proposalSession', function(newValue, oldValue) {
         if (newValue != oldValue) {
             $scope.proposalSessionChanged = ! angular.equals($scope.proposalSession, $scope.proposalSessionPristine);
         }
     }, true);
+
+    // Subscribe to the stateChangeStart Event that occurs when navigating between menu item. Need to trigger save here also
+    var stateChangeStartHandle = $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+        savePending();
+    });
+
+    // Un-Subscribe from the stateChangeStart Event when the Scope is destroyed
+    $scope.$on('$destroy', stateChangeStartHandle);
 
     /* Kendo UI Tabstrip Configuration Options and Events */
     $scope.proposalFormKendoTabStrip = {
@@ -104,28 +142,44 @@ angular.module('ngBoilerplate.proposalSession', [
         select: proposalFormKendoTabStrip_onSelect
     };
 
+    // Fired when tab strip selection is changed
     function proposalFormKendoTabStrip_onSelect(e) {
 //        console.log("Selected: " + $(e.item).find("> .k-link").text());
+        savePending();
+    }
 
+    // This function performs saving of the data if pending changes to be updated.
+    function savePending() {
         if ($scope.proposalSessionChanged) {
             console.log("Proposal Session Changed: " + $scope.proposalSessionChanged + "... saving.");
 
-            proposalSessionService.createOrUpdateProposalSession($scope.proposalSession).then(
-                function(data) {
-                    if ($scope.proposalSession.rid === -1) {
+            if ($scope.proposalSession.rid === -1) {
+                proposalSessionService.createProposalSession($scope.proposalSession).then(
+                    function(data) {
                         $scope.proposalSession.rid = data.rid;
+                        $rootScope.proposalSessionId = data.rid;
                         growl.success('Proposal Session Created');
-                    } else {
-                        growl.success('Proposal Session Updated');
-                    }
 
-                    $scope.proposalSessionPristine = angular.copy($scope.proposalSession);
-                    $scope.proposalSessionChanged = false;
-                },
-                function(error) {
-                    growl.error(error.data.errorMessage);
-                }
-            );
+                        $scope.proposalSessionPristine = angular.copy($scope.proposalSession);
+                        $scope.proposalSessionChanged = false;
+                    },
+                    function(error) {
+                        growl.error(error.data.errorMessage);
+                    }
+                );
+            } else {
+                proposalSessionService.updateProposalSession($scope.proposalSession).then(
+                    function(data) {
+                        growl.success('Proposal Session Updated');
+
+                        $scope.proposalSessionPristine = angular.copy($scope.proposalSession);
+                        $scope.proposalSessionChanged = false;
+                    },
+                    function(error) {
+                        growl.error(error.data.errorMessage);
+                    }
+                );
+            }
         }
     }
 
@@ -133,7 +187,7 @@ angular.module('ngBoilerplate.proposalSession', [
     $scope.kendoNumericTextBoxOptions = {
         min: "0",
         max: "100000000",
-        format: "c2",
+        format: "c2",      // Currency with 2 decimal places
         spinners: false
     };
 
@@ -144,6 +198,7 @@ angular.module('ngBoilerplate.proposalSession', [
         format: "#"
     };
 
+    // Company Name Lookup AutoComplete Backing Code
     $scope.customerAutoComplete = {
         minLength: 2,
         dataTextField: 'companyName',
@@ -163,8 +218,8 @@ angular.module('ngBoilerplate.proposalSession', [
         }),
         select: function(e) {
             var dataItem = this.dataItem(e.item.index());
-            $scope.proposalSession.customerGoal.customerRid = dataItem.rid;
-            $scope.proposalSession.customerGoal.contactName = dataItem.contactName;
+            $scope.proposalSession.customerGoal.customer.rid = dataItem.rid;
+            $scope.proposalSession.customerGoal.customer.contactName = dataItem.contactName;
         }
     };
 })
