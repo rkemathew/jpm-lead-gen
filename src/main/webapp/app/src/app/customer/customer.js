@@ -1,5 +1,5 @@
 angular.module('ngBoilerplate.customer', [
-    'ui.router', 'ngResource', 'hateoas', 'angular-growl', 'kendo.directives'
+    'ui.router', 'ui.bootstrap', 'ngResource', 'hateoas', 'angular-growl', 'kendo.directives'
 ])
 .config(function($stateProvider, growlProvider) {
     $stateProvider.state('manageCustomers', {
@@ -43,13 +43,27 @@ angular.module('ngBoilerplate.customer', [
         phone2: ''
     };
 
+    $("#customerEditConfirmDialog").kendoWindow({
+        visible: false,
+        width: "350px",
+        actions: [ "Close" ],
+        title: "Customer Edit"
+    });
+
+    var kendoTemplate = kendo.template($("#customerEditConfirmationDialogContent").html());
+
+    var customerEditConfirmDialog = $("#customerEditConfirmDialog").data("kendoWindow");
+
     $scope.createCustomer = function() {
         customerService.createCustomer($scope.customer).then(
             function(data) {
                 growl.success('Customer Created: ' + data.companyName);
             },
             function(error) {
-                growl.error(error.data.errorMessage);
+                var errorMessage = error.data.errorMessage;
+                growl.error(errorMessage);
+                customerEditConfirmDialog.content(kendoTemplate({ "errorMessage": errorMessage }));
+                customerEditConfirmDialog.center().open();
             }
         );
     };

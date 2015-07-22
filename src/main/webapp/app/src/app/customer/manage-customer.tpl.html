@@ -107,6 +107,15 @@
                 <button class="btn btn-success pull-right" type="submit">Create Customer</button>
             </div>
         </div>
+
+        <div id="customerEditConfirmDialog"></div>
+        <script type="text/ng-template" id="customerEditConfirmationDialogContent">
+            <p>#= errorMessage #, would you like to edit it?</p>
+            <div class="text-center">
+                <button class="btn btn-warning">Yes</button>
+                <button class="btn btn-warning">No</button>
+            </div>
+        </script>
     </form>
 </div>
 

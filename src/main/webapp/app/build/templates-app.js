@@ -477,6 +477,15 @@ angular.module("customer/manage-customer.tpl.html", []).run(["$templateCache", f
     "                <button class=\"btn btn-success pull-right\" type=\"submit\">Create Customer</button>\n" +
     "            </div>\n" +
     "        </div>\n" +
+    "\n" +
+    "        <div id=\"customerEditConfirmDialog\"></div>\n" +
+    "        <script type=\"text/ng-template\" id=\"customerEditConfirmationDialogContent\">\n" +
+    "            <p>#= errorMessage #, would you like to edit it?</p>\n" +
+    "            <div class=\"text-center\">\n" +
+    "                <button class=\"btn btn-warning\">Yes</button>\n" +
+    "                <button class=\"btn btn-warning\">No</button>\n" +
+    "            </div>\n" +
+    "        </script>\n" +
     "    </form>\n" +
     "</div>\n" +
     "\n" +
