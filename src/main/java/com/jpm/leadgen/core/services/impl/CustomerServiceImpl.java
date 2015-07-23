@@ -43,7 +43,7 @@ public class CustomerServiceImpl implements CustomerService {
         while (iterator.hasNext()) {
             Customer customerFromList = iterator.next();
             if (customerFromList.getCompanyName().equals(customer.getCompanyName())) {
-                throw new CustomerExistsException("Customer with Company Name '" + customer.getCompanyName() + "' already exists");
+                throw new CustomerExistsException("Customer with Company Name '" + customer.getCompanyName() + "' already exists", customerFromList);
             }
         }
 

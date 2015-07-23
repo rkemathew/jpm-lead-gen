@@ -109,11 +109,11 @@
         </div>
 
         <div id="customerEditConfirmDialog"></div>
-        <script type="text/ng-template" id="customerEditConfirmationDialogContent">
-            <p>#= errorMessage #, would you like to edit it?</p>
+        <script type="text/ng-template" id="customerEditConfirmationDialogTemplate">
+            <p>{{ errorMessage }}, would you like to edit it?</p>
             <div class="text-center">
-                <button class="btn btn-warning">Yes</button>
-                <button class="btn btn-warning">No</button>
+                <button class="btn btn-warning" ng-click="customerEditConfirmYes()">Yes</button>
+                <button class="btn btn-warning" ng-click="customerEditConfirmNo()">No</button>
             </div>
         </script>
     </form>

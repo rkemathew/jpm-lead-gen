@@ -60,6 +60,7 @@ com\jpm\leadgen\core\models\entities\ProposalSession.class
 com\jpm\leadgen\core\repositories\BlogRepo.class
 com\jpm\leadgen\rest\mvc\CustomerController.class
 com\jpm\leadgen\core\security\AuthSuccess.class
+com\jpm\leadgen\core\services\exceptions\ResourceSupportRuntimeException.class
 com\jpm\leadgen\rest\exceptions\NotFoundException.class
 com\jpm\leadgen\rest\mvc\BlogController.class
 com\jpm\leadgen\rest\resources\asm\AccountListResourceAsm.class

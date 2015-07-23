@@ -36,24 +36,34 @@ angular.module('ngBoilerplate.customer', [
 
     return service;
 })
-.controller("ManageCustomerCtrl", function($scope, customerService, $state, growl) {
+.controller("ManageCustomerCtrl", function($scope, customerService, $state, growl, $compile) {
     $scope.customer = {
         zip: '',
         phone1: '',
         phone2: ''
     };
 
+    /* Configuration and event handling for the Customer Edit Confirmation Dialog */
     $("#customerEditConfirmDialog").kendoWindow({
         visible: false,
+        modal: true,
         width: "350px",
         actions: [ "Close" ],
-        title: "Customer Edit"
+        title: "Edit Customer Confirmation"
     });
-
-    var kendoTemplate = kendo.template($("#customerEditConfirmationDialogContent").html());
 
     var customerEditConfirmDialog = $("#customerEditConfirmDialog").data("kendoWindow");
 
+    $scope.customerEditConfirmYes = function() {
+        alert("You said Yes to Edit");
+        customerEditConfirmDialog.close();
+    };
+
+    $scope.customerEditConfirmNo = function() {
+        customerEditConfirmDialog.close();
+    };
+
+    /* Function for creating a new customer in the database */
     $scope.createCustomer = function() {
         customerService.createCustomer($scope.customer).then(
             function(data) {
@@ -61,8 +71,11 @@ angular.module('ngBoilerplate.customer', [
             },
             function(error) {
                 var errorMessage = error.data.errorMessage;
+                $scope.errorMessage = errorMessage;
                 growl.error(errorMessage);
-                customerEditConfirmDialog.content(kendoTemplate({ "errorMessage": errorMessage }));
+
+                var content = $compile($("#customerEditConfirmationDialogTemplate").html())($scope);
+                customerEditConfirmDialog.content(content);
                 customerEditConfirmDialog.center().open();
             }
         );
