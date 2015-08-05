@@ -38,6 +38,26 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer createCustomer(Customer customer) {
+        checkIfExists(customer);
+        return customerRepo.createCustomer(customer);
+    }
+
+    @Override
+    public Customer updateCustomer(Long id, Customer customer) {
+        Customer foundCustomer = customerRepo.findCustomer(id);
+        if (!foundCustomer.getCompanyName().equals(customer.getCompanyName())) {
+            checkIfExists(customer);
+        }
+
+        return customerRepo.updateCustomer(id, customer);
+    }
+
+    @Override
+    public Customer deleteCustomer(Long id) {
+        return customerRepo.deleteCustomer(id);
+    }
+
+    protected void checkIfExists(Customer customer) {
         List<Customer> customerList = customerRepo.findCustomersByCompanyName(customer.getCompanyName());
         Iterator<Customer> iterator = customerList.iterator();
         while (iterator.hasNext()) {
@@ -46,17 +66,5 @@ public class CustomerServiceImpl implements CustomerService {
                 throw new CustomerExistsException("Customer with Company Name '" + customer.getCompanyName() + "' already exists", customerFromList);
             }
         }
-
-        return customerRepo.createCustomer(customer);
-    }
-
-    @Override
-    public Customer updateCustomer(Long id, Customer customer) {
-        return customerRepo.updateCustomer(id, customer);
-    }
-
-    @Override
-    public Customer deleteCustomer(Long id) {
-        return customerRepo.deleteCustomer(id);
     }
 }

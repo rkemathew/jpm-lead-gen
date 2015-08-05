@@ -10,6 +10,7 @@ import org.springframework.hateoas.ResourceSupport;
 public class ProposalSessionResource extends ResourceSupport {
     private Long rid;
     private CustomerGoalResource customerGoal;
+    private JpmModelResource jpmModel;
 
     public Long getRid() {
         return rid;
@@ -27,9 +28,18 @@ public class ProposalSessionResource extends ResourceSupport {
         this.customerGoal = customerGoal;
     }
 
+    public JpmModelResource getJpmModel() {
+        return jpmModel;
+    }
+
+    public void setJpmModel(JpmModelResource jpmModel) {
+        this.jpmModel = jpmModel;
+    }
+
     public ProposalSession toProposalSession() {
         ProposalSession proposalSession = new ProposalSession();
         proposalSession.setCustomerGoal(customerGoal.toCustomerGoal());
+        proposalSession.setJpmModel(jpmModel.toJpmModel());
         return proposalSession;
     }
 }

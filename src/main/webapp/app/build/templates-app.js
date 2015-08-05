@@ -402,7 +402,7 @@ angular.module("customer/manage-customer.tpl.html", []).run(["$templateCache", f
     "    <h1 class=\"page-header\">\n" +
     "        Customer Management\n" +
     "    </h1>\n" +
-    "    <form name=\"customerForm\" ng-submit=\"createCustomer()\" class=\"form-horizontal\">\n" +
+    "    <form name=\"customerForm\" class=\"form-horizontal\">\n" +
     "        <div class=\"form-group form-group-lg\">\n" +
     "            <label class=\"col-sm-2 control-label\" for=\"contactName\">Contact Name:</label>\n" +
     "            <div class=\"col-sm-4\">\n" +
@@ -473,8 +473,9 @@ angular.module("customer/manage-customer.tpl.html", []).run(["$templateCache", f
     "        </div>\n" +
     "\n" +
     "        <div class=\"form-group form-group-lg\">\n" +
-    "            <div class=\"col-sm-6\">\n" +
-    "                <button class=\"btn btn-success pull-right\" type=\"submit\">Create Customer</button>\n" +
+    "            <div class=\"col-sm-6\" ng-switch=\"editMode\">\n" +
+    "                <button class=\"btn btn-success pull-right\" ng-switch-when=\"add\" ng-click=\"createCustomer()\">Create Customer</button>\n" +
+    "                <button class=\"btn btn-success pull-right\" ng-switch-when=\"edit\" ng-click=\"updateCustomer()\">Update Customer</button>\n" +
     "            </div>\n" +
     "        </div>\n" +
     "\n" +
@@ -731,7 +732,28 @@ angular.module("proposalSession/customer-goal.tpl.html", []).run(["$templateCach
 angular.module("proposalSession/jpm-model.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("proposalSession/jpm-model.tpl.html",
     "<h3 class=\"page-header\">JPM Model</h3>\n" +
-    "");
+    "\n" +
+    "<form name=\"jpmModelForm\" class=\"form-horizontal\">\n" +
+    "    <div class=\"form-group form-group-lg\">\n" +
+    "        <label class=\"col-sm-2 control-label\" for=\"jpmModelTemplate\">JPM Model Template:</label>\n" +
+    "        <div class=\"col-sm-4\">\n" +
+    "            <select kendo-combo-box id=\"jpmModelTemplate\" ng-model=\"proposalSession.jpmModel.jpmModelTemplateId\" data-placeholder=\"'Choose JPM Model Template'\" class=\"form-control\">\n" +
+    "                <option value=\"1\">Default JPM Model Template</option>\n" +
+    "            </select>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "\n" +
+    "    <div class=\"form-group form-group-lg\">\n" +
+    "        <label class=\"col-sm-2 control-label\" for=\"leadGenerationModel\">Lead Generation Model:</label>\n" +
+    "        <div class=\"col-sm-4\">\n" +
+    "            <select kendo-combo-box id=\"leadGenerationModel\" ng-model=\"proposalSession.jpmModel.leadGenerationModelId\" data-placeholder=\"'Choose JPM Model Template'\" class=\"form-control\">\n" +
+    "                <option value=\"1\">Cold Calling</option>\n" +
+    "                <option value=\"2\">Internet Generated</option>\n" +
+    "                <option value=\"3\">Referrals</option>\n" +
+    "            </select>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</form>");
 }]);
 
 angular.module("proposalSession/manage-proposal-session.tpl.html", []).run(["$templateCache", function($templateCache) {

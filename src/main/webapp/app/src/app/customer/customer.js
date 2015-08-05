@@ -24,6 +24,11 @@ angular.module('ngBoilerplate.customer', [
         return Customer.save({}, customer).$promise;
     };
 
+    service.updateCustomer = function(customer) {
+        var Customer = $resource("/jpm-lead-gen/rest/customers/:customerId");
+        return Customer.save({customerId: customer.rid}, customer).$promise;
+    };
+
     service.getAllCustomers = function() {
         var Customer = $resource("/jpm-lead-gen/rest/customers");
         return Customer.get().$promise;
@@ -37,11 +42,21 @@ angular.module('ngBoilerplate.customer', [
     return service;
 })
 .controller("ManageCustomerCtrl", function($scope, customerService, $state, growl, $compile) {
-    $scope.customer = {
-        zip: '',
-        phone1: '',
-        phone2: ''
-    };
+    function resetCustomer() {
+        delete $scope.customer;
+
+        $scope.customer = {
+            zip: '',
+            phone1: '',
+            phone2: ''
+        };
+
+        $scope.editMode = "add";
+    }
+
+    resetCustomer();
+
+    $scope.editMode = "add";
 
     /* Configuration and event handling for the Customer Edit Confirmation Dialog */
     $("#customerEditConfirmDialog").kendoWindow({
@@ -55,7 +70,10 @@ angular.module('ngBoilerplate.customer', [
     var customerEditConfirmDialog = $("#customerEditConfirmDialog").data("kendoWindow");
 
     $scope.customerEditConfirmYes = function() {
-        alert("You said Yes to Edit");
+        $scope.customer = $scope.errorObject;
+        delete $scope.customer.links;
+        $scope.editMode = "edit";
+
         customerEditConfirmDialog.close();
     };
 
@@ -67,11 +85,35 @@ angular.module('ngBoilerplate.customer', [
     $scope.createCustomer = function() {
         customerService.createCustomer($scope.customer).then(
             function(data) {
+                resetCustomer();
                 growl.success('Customer Created: ' + data.companyName);
             },
             function(error) {
                 var errorMessage = error.data.errorMessage;
+                var errorObject = error.data.errorObject;
                 $scope.errorMessage = errorMessage;
+                $scope.errorObject = errorObject;
+                growl.error(errorMessage);
+
+                var content = $compile($("#customerEditConfirmationDialogTemplate").html())($scope);
+                customerEditConfirmDialog.content(content);
+                customerEditConfirmDialog.center().open();
+            }
+        );
+    };
+
+    /* Function for updating an existing customer in the database */
+    $scope.updateCustomer = function() {
+        customerService.updateCustomer($scope.customer).then(
+            function(data) {
+                resetCustomer();
+                growl.success('Customer Updated: ' + data.companyName);
+            },
+            function(error) {
+                var errorMessage = error.data.errorMessage;
+                var errorObject = error.data.errorObject;
+                $scope.errorMessage = errorMessage;
+                $scope.errorObject = errorObject;
                 growl.error(errorMessage);
 
                 var content = $compile($("#customerEditConfirmationDialogTemplate").html())($scope);

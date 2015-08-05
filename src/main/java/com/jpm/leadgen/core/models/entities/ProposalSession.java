@@ -15,6 +15,8 @@ public class ProposalSession {
     private Long id;
     @OneToOne
     private CustomerGoal customerGoal;
+    @OneToOne
+    private JpmModel jpmModel;
     private Date createdOn;
     private String createdBy;
     private Date modifiedOn;
@@ -34,6 +36,14 @@ public class ProposalSession {
 
     public void setCustomerGoal(CustomerGoal customerGoal) {
         this.customerGoal = customerGoal;
+    }
+
+    public JpmModel getJpmModel() {
+        return jpmModel;
+    }
+
+    public void setJpmModel(JpmModel jpmModel) {
+        this.jpmModel = jpmModel;
     }
 
     public Date getCreatedOn() {

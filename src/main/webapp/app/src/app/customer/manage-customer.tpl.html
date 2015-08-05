@@ -32,7 +32,7 @@
     <h1 class="page-header">
         Customer Management
     </h1>
-    <form name="customerForm" ng-submit="createCustomer()" class="form-horizontal">
+    <form name="customerForm" class="form-horizontal">
         <div class="form-group form-group-lg">
             <label class="col-sm-2 control-label" for="contactName">Contact Name:</label>
             <div class="col-sm-4">
@@ -103,8 +103,9 @@
         </div>
 
         <div class="form-group form-group-lg">
-            <div class="col-sm-6">
-                <button class="btn btn-success pull-right" type="submit">Create Customer</button>
+            <div class="col-sm-6" ng-switch="editMode">
+                <button class="btn btn-success pull-right" ng-switch-when="add" ng-click="createCustomer()">Create Customer</button>
+                <button class="btn btn-success pull-right" ng-switch-when="edit" ng-click="updateCustomer()">Update Customer</button>
             </div>
         </div>
 

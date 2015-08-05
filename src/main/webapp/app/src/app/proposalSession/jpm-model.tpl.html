@@ -1,1 +1,23 @@
 <h3 class="page-header">JPM Model</h3>
+
+<form name="jpmModelForm" class="form-horizontal">
+    <div class="form-group form-group-lg">
+        <label class="col-sm-2 control-label" for="jpmModelTemplate">JPM Model Template:</label>
+        <div class="col-sm-4">
+            <select kendo-combo-box id="jpmModelTemplate" ng-model="proposalSession.jpmModel.jpmModelTemplateId" data-placeholder="'Choose JPM Model Template'" class="form-control">
+                <option value="1">Default JPM Model Template</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group form-group-lg">
+        <label class="col-sm-2 control-label" for="leadGenerationModel">Lead Generation Model:</label>
+        <div class="col-sm-4">
+            <select kendo-combo-box id="leadGenerationModel" ng-model="proposalSession.jpmModel.leadGenerationModelId" data-placeholder="'Choose JPM Model Template'" class="form-control">
+                <option value="1">Cold Calling</option>
+                <option value="2">Internet Generated</option>
+                <option value="3">Referrals</option>
+            </select>
+        </div>
+    </div>
+</form>

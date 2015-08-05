@@ -76,11 +76,11 @@ public class CustomerController {
         return new ResponseEntity<CustomerResource>(res, headers, HttpStatus.CREATED);
     }
 
-    @RequestMapping(value="/{customerId}", method = RequestMethod.PUT)
+    @RequestMapping(value="/{customerId}", method = RequestMethod.POST)
     @PreAuthorize("permitAll")
     public ResponseEntity<CustomerResource> updateCustomer(
             @PathVariable Long customerId, @RequestBody CustomerResource sentCustomer
-    ) {
+    ) throws CustomerExistsException {
         Customer updatedCustomer = customerService.updateCustomer(customerId, sentCustomer.toCustomer());
         if(updatedCustomer != null) {
             CustomerResource res = new CustomerResourceAsm().toResource(updatedCustomer);
